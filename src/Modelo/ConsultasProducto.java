@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 
 public class ConsultasProducto extends Conexion{
-    public boolean registrar(Add_Producto pro){
+    public boolean registrar(AddProducto pro){
         PreparedStatement ps = null;
         Connection con = getConexion();
         
@@ -32,7 +32,7 @@ public class ConsultasProducto extends Conexion{
         }
     }
     
-    public boolean modificar(Add_Producto pro){
+    public boolean modificar(AddProducto pro){
         PreparedStatement ps = null;
         Connection con = getConexion();
         
@@ -60,7 +60,7 @@ public class ConsultasProducto extends Conexion{
         }
     }
     
-    public boolean eliminar(Add_Producto pro){
+    public boolean eliminar(AddProducto pro){
         PreparedStatement ps = null;
         Connection con = getConexion();
         
@@ -83,7 +83,7 @@ public class ConsultasProducto extends Conexion{
         }
     }
     
-    public boolean buscar(Add_Producto pro){
+    public boolean buscar(AddProducto pro){
         PreparedStatement ps = null;
         ResultSet rs = null;
         Connection con = getConexion();

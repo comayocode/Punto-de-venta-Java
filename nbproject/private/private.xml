@@ -4,10 +4,16 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/E:/02%20DOCUMENTOS/Documentos/NetBeansProjects/CRUDMVC/src/Controlador/ContrProducto.java</file>
+            <file>file:/E:/02%20DOCUMENTOS/Documentos/NetBeansProjects/CRUDMVC/src/Modelo/AddCompras.java</file>
+            <file>file:/E:/02%20DOCUMENTOS/Documentos/NetBeansProjects/CRUDMVC/src/crudmvc/CRUDMVC.java</file>
             <file>file:/E:/02%20DOCUMENTOS/Documentos/NetBeansProjects/CRUDMVC/src/Controlador/ContrCompras.java</file>
+            <file>file:/E:/02%20DOCUMENTOS/Documentos/NetBeansProjects/CRUDMVC/src/Vista/FrmAddProducto.java</file>
+            <file>file:/E:/02%20DOCUMENTOS/Documentos/NetBeansProjects/CRUDMVC/src/Modelo/AddProducto.java</file>
             <file>file:/E:/02%20DOCUMENTOS/Documentos/NetBeansProjects/CRUDMVC/src/Vista/FrmCompras.java</file>
+            <file>file:/E:/02%20DOCUMENTOS/Documentos/NetBeansProjects/CRUDMVC/src/jmenu/All_Productos.java</file>
             <file>file:/E:/02%20DOCUMENTOS/Documentos/NetBeansProjects/CRUDMVC/src/Modelo/ConsultasProducto.java</file>
             <file>file:/E:/02%20DOCUMENTOS/Documentos/NetBeansProjects/CRUDMVC/src/Modelo/ConsultasCompras.java</file>
+            <file>file:/E:/02%20DOCUMENTOS/Documentos/NetBeansProjects/CRUDMVC/src/Vista/FrmSeleccionarProducto.java</file>
         </group>
     </open-files>
 </project-private>

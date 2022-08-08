@@ -31,8 +31,8 @@ public class ContrCompras implements ActionListener{
         //posición centrada de la ventana
         frm.setLocationRelativeTo(null);
         System.out.println("?");
-//Ocultar campo de texto        
-//frm.txtCodigoCompra.setVisible(false);
+        //Ocultar campo de texto        
+        //frm.txtCodigoCompra.setVisible(false);
     }
     
     @Override
@@ -49,6 +49,7 @@ public class ContrCompras implements ActionListener{
             com.setObservaciones(frm.jtextObservaciones.getText());
             
             //Llamr método `registrar` del modelo "Consultas" para pasarle los valores anteiores e insertarlos en la DB
+            
             if(modC.registrar(com)){
                 JOptionPane.showMessageDialog(null, "Registro Guardado");
                 limpiar();

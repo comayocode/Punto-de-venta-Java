@@ -2,17 +2,17 @@ package Controlador;
 
 import java.awt.event.ActionListener;
 import Modelo.ConsultasProducto;
-import Vista.Frm_Add_Producto;
-import Modelo.Add_Producto;
+import Vista.FrmAddProducto;
+import Modelo.AddProducto;
 import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
 
 public class ContrProducto implements ActionListener{
-    private Add_Producto mod;
+    private AddProducto mod;
     private ConsultasProducto modC;
-    private Frm_Add_Producto frm;
+    private FrmAddProducto frm;
     
-    public ContrProducto(Add_Producto mod, ConsultasProducto modC, Frm_Add_Producto frm){
+    public ContrProducto(AddProducto mod, ConsultasProducto modC, FrmAddProducto frm){
         this.mod = mod;
         this.modC = modC;
         this.frm = frm;
@@ -88,6 +88,8 @@ public class ContrProducto implements ActionListener{
             limpiar();
         }
     }
+    
+    
     
     public void limpiar(){
         frm.txtCodigo.setText(null);
