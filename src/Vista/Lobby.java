@@ -2,8 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package jmenu;
+package Vista;
 
+import Controlador.ContrCompras;
+import Controlador.ContrProducto;
+import Modelo.AddCompras;
+import Modelo.AddProducto;
+import Modelo.ConsultasCompras;
+import Modelo.ConsultasProducto;
 import Vista.FrmCompras;
 import Vista.FrmAddProducto;
 
@@ -74,16 +80,18 @@ public class Lobby extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        FrmCompras frmC = new FrmCompras();
-        frmC.setLocationRelativeTo(null);
-        frmC.setVisible(true);
+        
+        FrmCompras frmCom = new FrmCompras();
+        frmCom.setLocationRelativeTo(null);
+        frmCom.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        FrmAddProducto pro = new FrmAddProducto();
-        pro.setLocationRelativeTo(null);
-        pro.setVisible(true);
+        
+        FrmAddProducto frmPro = new FrmAddProducto();
+        frmPro.setLocationRelativeTo(null);
+        frmPro.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 

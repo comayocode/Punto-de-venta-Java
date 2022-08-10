@@ -4,7 +4,6 @@
  */
 package Vista;
 
-import jmenu.Lobby;
 import Controlador.ContrCompras;
 import Modelo.AddCompras;
 import Modelo.Conexion;
@@ -52,7 +51,6 @@ public class FrmCompras extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         txtCodigoCompra = new javax.swing.JTextField();
         txtFecha = new javax.swing.JTextField();
-        txtCodigoProducto = new javax.swing.JTextField();
         txtNombreProducto = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         txtCompraKG = new javax.swing.JTextField();
@@ -68,6 +66,7 @@ public class FrmCompras extends javax.swing.JFrame {
         btnBuscarCodCompra = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        txtAddCodPro = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,8 +109,6 @@ public class FrmCompras extends javax.swing.JFrame {
         jLabel9.setText("Total Compra:");
 
         txtCodigoCompra.setEnabled(false);
-
-        txtCodigoProducto.setEnabled(false);
 
         txtNombreProducto.setEnabled(false);
 
@@ -173,8 +170,8 @@ public class FrmCompras extends javax.swing.JFrame {
                         .addGap(37, 37, 37)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtCodigoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtAddCodPro, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(txtNombreProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                             .addComponent(txtFecha)
@@ -232,8 +229,8 @@ public class FrmCompras extends javax.swing.JFrame {
                             .addGap(18, 18, 18)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel4)
-                                .addComponent(txtCodigoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton1))
+                                .addComponent(jButton1)
+                                .addComponent(txtAddCodPro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(18, 18, 18)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel5)
@@ -404,9 +401,9 @@ public class FrmCompras extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     public static javax.swing.JTable jtbVer_Compras;
     public javax.swing.JTextArea jtextObservaciones;
+    public static javax.swing.JTextField txtAddCodPro;
     public javax.swing.JTextField txtCampoBuscar;
     public javax.swing.JTextField txtCodigoCompra;
-    public static javax.swing.JTextField txtCodigoProducto;
     public javax.swing.JTextField txtCompraKG;
     public javax.swing.JTextField txtFecha;
     public static javax.swing.JTextField txtNombreProducto;

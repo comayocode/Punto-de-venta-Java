@@ -20,7 +20,11 @@ public class ConsultasCompras extends Conexion{
             ps.setInt(2, com.getCodigo_producto());
             ps.setDouble(3, com.getCompra_kg());
             ps.setString(4, com.getObservaciones());
-            ps.execute();
+            System.out.println(com.getFecha());
+            System.out.println(com.getCodigo_producto());
+            System.out.println(com.getCompra_kg());
+            System.out.println(com.getObservaciones());
+            ps.executeUpdate();
             
             return true;
         } catch (SQLException e) {

@@ -67,12 +67,10 @@
                   <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="btnLimpiar" pref="129" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtCodigo" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtNombre" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtPrecio_compra" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtPrecio_venta" alignment="0" pref="129" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="txtCodigo" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtNombre" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtPrecio_compra" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtPrecio_venta" alignment="0" pref="129" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">

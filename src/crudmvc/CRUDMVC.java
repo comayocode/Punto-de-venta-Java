@@ -9,8 +9,9 @@ import Modelo.AddCompras;
 import Modelo.ConsultasCompras;
 import Vista.FrmCompras;
 import Controlador.ContrCompras;
-import jmenu.Lobby;
+import Vista.Lobby;
 import javax.swing.UIManager;
+import jmenu.Menu;
 public class CRUDMVC {
 
     public static void main(String[] args) {
@@ -22,14 +23,15 @@ public class CRUDMVC {
         ctrl.iniciar();
         frm.setVisible(true);
         
-        /*ConsultasCompras modCC = new ConsultasCompras();        
+        ConsultasCompras modCom = new ConsultasCompras();        
         AddCompras com = new AddCompras();
-        FrmCompras frmC = new FrmCompras();
+        FrmCompras frmCom = new FrmCompras();
+        ContrCompras ctrlCom = new ContrCompras(com, modCom, frmCom);
+        ctrlCom.iniciar();
+        frmCom.setVisible(true);
         
-        ContrCompras ctrlCom = new ContrCompras(com, modCC, frmC);
-        ctrlCom.iniciar();*/
-        
-        
+        //Lobby lobby = new Lobby();
+        //lobby.setVisible(true);
     }
     
 }

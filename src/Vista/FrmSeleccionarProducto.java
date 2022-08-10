@@ -5,7 +5,7 @@
 package Vista;
 
 import Modelo.Conexion;
-import static Vista.FrmCompras.txtCodigoProducto;
+
 import static Vista.FrmCompras.txtNombreProducto;
 import static Vista.FrmCompras.txtPrecioCompra;
 import static Vista.FrmCompras.txtPrecioVenta;
@@ -24,6 +24,7 @@ public class FrmSeleccionarProducto extends javax.swing.JFrame {
      */
     public FrmSeleccionarProducto() {
         initComponents();
+        //FrmCompras frmCo = new FrmCompras();
     }
 
     /**
@@ -198,7 +199,7 @@ public class FrmSeleccionarProducto extends javax.swing.JFrame {
         
         //Enviar datos de la tabla a los campos de texto de otro JFrame
         int filaseleccionada = jtbSeleccionarProducto.getSelectedRow();
-        txtCodigoProducto.setText(jtbSeleccionarProducto.getValueAt(filaseleccionada, 0).toString());
+        FrmCompras.txtAddCodPro.setText(jtbSeleccionarProducto.getValueAt(filaseleccionada, 0).toString());
         txtNombreProducto.setText(jtbSeleccionarProducto.getValueAt(filaseleccionada, 1).toString());
         txtPrecioCompra.setText(jtbSeleccionarProducto.getValueAt(filaseleccionada, 2).toString());
         txtPrecioVenta.setText(jtbSeleccionarProducto.getValueAt(filaseleccionada, 3).toString());
