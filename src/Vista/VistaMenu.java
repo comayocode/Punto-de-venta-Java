@@ -52,6 +52,7 @@ public class VistaMenu extends javax.swing.JFrame {
         lbResumen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setFocusable(false);
         setUndecorated(true);
 
         bg.setBackground(new java.awt.Color(241, 241, 241));
@@ -527,6 +528,9 @@ public class VistaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnProductsMousePressed
     private void btnProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductsMouseClicked
         btnProducts.setBackground(new Color(0x2b628c));
+        VistaProductosMenu opciones = new VistaProductosMenu();
+        opciones.setVisible(true);
+        //this.setEnabled(false); //Bloquear Menu al abrir las opciones
     }//GEN-LAST:event_btnProductsMouseClicked
 
     // ---- EVENTOS Y ESTILOS btnProveedores ----
