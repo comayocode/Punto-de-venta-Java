@@ -10,6 +10,7 @@ import Modelo.ConsultasCompras;
 import Vista.FrmCompras;
 import Controlador.ContrCompras;
 import Vista.Lobby;
+import Vista.VistaProductosAgregar;
 import javax.swing.UIManager;
 import jmenu.Menu;
 public class CRUDMVC {
@@ -18,7 +19,7 @@ public class CRUDMVC {
         
         AddProducto mod = new AddProducto();
         ConsultasProducto modC = new ConsultasProducto();
-        FrmAddProducto frm = new FrmAddProducto();
+        VistaProductosAgregar frm = new VistaProductosAgregar();
         ContrProducto ctrl = new ContrProducto(mod, modC, frm);
         ctrl.iniciar();
         frm.setVisible(true);

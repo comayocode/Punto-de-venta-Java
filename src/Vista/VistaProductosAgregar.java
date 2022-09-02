@@ -1,9 +1,6 @@
 package Vista;
 
 import java.awt.Color;
-import java.sql.PreparedStatement;
-import Modelo.Conexion;
-import java.sql.Connection;
 
 public class VistaProductosAgregar extends javax.swing.JFrame {
 
@@ -12,7 +9,6 @@ public class VistaProductosAgregar extends javax.swing.JFrame {
     public VistaProductosAgregar() {
         initComponents();
         this.setLocationRelativeTo(null);
-        Conexion con;
     }
 
 
@@ -48,11 +44,12 @@ public class VistaProductosAgregar extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 37, 260, 68));
 
+        txtCodigo.setEditable(false);
         txtCodigo.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         txtCodigo.setForeground(new java.awt.Color(16, 15, 15));
         txtCodigo.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtCodigo.setText("Codigo automático");
-        txtCodigo.setEnabled(false);
+        txtCodigo.setFocusable(false);
         txtCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCodigoActionPerformed(evt);
@@ -62,7 +59,6 @@ public class VistaProductosAgregar extends javax.swing.JFrame {
 
         txtNombre.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         txtNombre.setForeground(new java.awt.Color(16, 15, 15));
-        txtNombre.setText("Nombre:");
         jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 176, 190, 26));
 
         jpBarraSuperior.setBackground(new java.awt.Color(16, 15, 15));
@@ -127,7 +123,7 @@ public class VistaProductosAgregar extends javax.swing.JFrame {
         btnAgregar.setBackground(new java.awt.Color(34, 87, 126));
         btnAgregar.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         btnAgregar.setForeground(new java.awt.Color(241, 241, 241));
-        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Productos/btnGuardar.png"))); // NOI18N
+        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ListaProductos/btnGuardar.png"))); // NOI18N
         btnAgregar.setText("  Guardar");
         btnAgregar.setBorder(null);
         btnAgregar.setBorderPainted(false);
@@ -198,11 +194,7 @@ public class VistaProductosAgregar extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCodigoActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        Connection con = null;
-        try {
-            PreparedStatement st = con.prepareStatement("insert into add_products(nombre)");
-        } catch (Exception e) {
-        }
+
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnAgregarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMouseEntered

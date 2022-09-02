@@ -2,25 +2,29 @@ package Controlador;
 
 import java.awt.event.ActionListener;
 import Modelo.ConsultasProducto;
-import Vista.FrmAddProducto;
 import Modelo.AddProducto;
+import Vista.FrmAddProducto;
 import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
+import Vista.VistaProductosAgregar;
 
 public class ContrProducto implements ActionListener{
     private AddProducto mod;
     private ConsultasProducto modC;
     private FrmAddProducto frm;
+    //private VistaProductosAgregar frm;
     
     public ContrProducto(AddProducto mod, ConsultasProducto modC, FrmAddProducto frm){
         this.mod = mod;
         this.modC = modC;
         this.frm = frm;
         this.frm.btnGuardar.addActionListener(this);
+        /*
         this.frm.btnModificar.addActionListener(this);
         this.frm.btnEliminar.addActionListener(this);
         this.frm.btnLimpiar.addActionListener(this);
         this.frm.btnBuscar.addActionListener(this);   
+        */
     }
     
     public void iniciar(){
@@ -91,10 +95,10 @@ public class ContrProducto implements ActionListener{
     
     
     
+    
     public void limpiar(){
         frm.txtCodigo.setText(null);
         frm.txtNombre.setText(null);
-        frm.txtPrecio_compra.setText(null);
-        frm.txtPrecio_venta.setText(null);
     }
+
 }

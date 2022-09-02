@@ -128,8 +128,8 @@ public class VistaProductosMenu extends javax.swing.JFrame {
     // ---- EVENTOS Y ESTILOS btnAñadirProducto ----
     private void btnAñadirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAñadirMouseClicked
         btnAñadir.setBackground(new Color(0x2b628c));
-        VistaProductosLista lista = new VistaProductosLista();
-        lista.setVisible(true);
+        VistaProductosAgregar agregar = new VistaProductosAgregar();
+        agregar.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAñadirMouseClicked
     private void btnAñadirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAñadirMouseEntered
