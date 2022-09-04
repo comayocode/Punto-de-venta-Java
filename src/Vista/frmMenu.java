@@ -555,6 +555,9 @@ public class frmMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnProveedoresMousePressed
 
     private void btnClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMouseClicked
+        frmClientes clientes = new frmClientes();
+        clientes.setVisible(true);
+        this.dispose();
         btnClientes.setBackground(new Color(0x2b628c));
     }//GEN-LAST:event_btnClientesMouseClicked
     private void btnClientesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMouseEntered
