@@ -1,8 +1,6 @@
 package vista;
 
 import java.awt.Color;
-import java.awt.Font;
-import javax.swing.table.JTableHeader;
 import utilidades.jtable.pintar_tablas.pintarProductos;
 
 public class frmProductos extends javax.swing.JFrame {
@@ -12,9 +10,10 @@ public class frmProductos extends javax.swing.JFrame {
     public frmProductos() {
         initComponents();
         this.setLocationRelativeTo(null);
+        setTitle("Productos");
         
         //Llamar estilos de la tabla
-        editarHeaderJtable();
+        pintarProductos.editarHeaderJtable();
         pintarProductos.pintar();
         
     }
@@ -283,7 +282,7 @@ public class frmProductos extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(241, 241, 241));
-        jLabel6.setText("Añadir Producto");
+        jLabel6.setText("Guardar Reporte");
         btnGuardarReporte.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 7, -1, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/productos/Guardar Producto.png"))); // NOI18N
@@ -293,7 +292,7 @@ public class frmProductos extends javax.swing.JFrame {
 
         lbListaProductos.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         lbListaProductos.setForeground(new java.awt.Color(16, 15, 15));
-        lbListaProductos.setText("Lista de Productos");
+        lbListaProductos.setText("Tabla de Productos");
         body.add(lbListaProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 94, -1, -1));
 
         lbBuscar.setFont(new java.awt.Font("Roboto Medium", 0, 22)); // NOI18N
@@ -422,7 +421,6 @@ public class frmProductos extends javax.swing.JFrame {
         tbListaProductos.setPreferredSize(new java.awt.Dimension(525, 530));
         tbListaProductos.setRowHeight(25);
         tbListaProductos.setShowGrid(true);
-        tbListaProductos.setShowVerticalLines(true);
         tbListaProductos.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tbListaProductos);
 
@@ -576,20 +574,6 @@ public class frmProductos extends javax.swing.JFrame {
             txtBuscar.setForeground(new Color(0x666666));
         }
     }
-    
-    // ---- ESTILOS PARA JTABLE ----
-    
-    //Método para editar el Header del jtable
-    private void editarHeaderJtable(){
-        JTableHeader header = tbListaProductos.getTableHeader();
-        header.setFont(new Font("Roboto", Font.BOLD, 16));
-        header.setForeground(new Color(0xF1F1F1));
-        header.setOpaque(false);
-        tbListaProductos.getTableHeader().setBackground(new Color(0x100F0F));
-    }
-    
-    
-    
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

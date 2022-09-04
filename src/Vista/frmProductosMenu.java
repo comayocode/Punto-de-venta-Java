@@ -6,6 +6,7 @@ public class frmProductosMenu extends javax.swing.JFrame {
     public frmProductosMenu() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
     }
 
     @SuppressWarnings("unchecked")

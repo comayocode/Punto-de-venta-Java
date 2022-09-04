@@ -439,7 +439,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="f1" green="f1" red="f1" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="A&#xf1;adir Producto"/>
+                    <Property name="text" type="java.lang.String" value="Guardar Reporte"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -469,7 +469,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f" green="f" red="10" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Lista de Productos"/>
+                <Property name="text" type="java.lang.String" value="Tabla de Productos"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -806,7 +806,6 @@
                     </Property>
                     <Property name="rowHeight" type="int" value="25"/>
                     <Property name="showGrid" type="boolean" value="true"/>
-                    <Property name="showVerticalLines" type="boolean" value="true"/>
                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                       <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
                     </Property>

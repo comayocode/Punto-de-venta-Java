@@ -7,7 +7,9 @@ public class frmProductosAñadir extends javax.swing.JFrame {
     public frmProductosAñadir() {
         initComponents();
         this.setLocationRelativeTo(null);
+        setTitle("Añadir Productos");
     }
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

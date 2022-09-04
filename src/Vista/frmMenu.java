@@ -12,6 +12,7 @@ public class frmMenu extends javax.swing.JFrame {
     public frmMenu() {
         initComponents();
         this.setLocationRelativeTo(null);
+        setTitle("Menú");
     }
 
     @SuppressWarnings("unchecked")
@@ -537,6 +538,10 @@ public class frmMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnProductsMousePressed
 
     private void btnProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProveedoresMouseClicked
+        frmProveedores proveedor = new frmProveedores();
+        proveedor.setVisible(true);
+        this.dispose();
+        
         btnProveedores.setBackground(new Color(0x2b628c));
     }//GEN-LAST:event_btnProveedoresMouseClicked
     private void btnProveedoresMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProveedoresMouseEntered
