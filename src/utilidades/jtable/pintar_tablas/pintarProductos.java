@@ -1,7 +1,10 @@
 package utilidades.jtable.pintar_tablas;
 
+import java.awt.Color;
+import java.awt.Font;
 import utilidades.jtable.color_intercalado.colorIntercaladoCeldasJTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 import vista.frmProductos;
 import static vista.frmProductos.tbListaProductos;
 
@@ -35,5 +38,14 @@ public class pintarProductos {
             e.printStackTrace();
         }
         
+    }
+    
+    //Método para editar el Header del jtable
+    public static void editarHeaderJtable(){
+        JTableHeader header = tbListaProductos.getTableHeader();
+        header.setFont(new Font("Roboto", Font.BOLD, 16));
+        header.setForeground(new Color(0xF1F1F1));
+        header.setOpaque(false);
+        tbListaProductos.getTableHeader().setBackground(new Color(0x100F0F));
     }
 }
