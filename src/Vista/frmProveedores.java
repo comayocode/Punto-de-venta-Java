@@ -304,7 +304,7 @@ public class frmProveedores extends javax.swing.JFrame {
         tbListaProveedores.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tbListaProveedores);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 165, 716, 291));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 165, 716, 281));
 
         lbBuscar.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         lbBuscar.setForeground(new java.awt.Color(16, 15, 15));
