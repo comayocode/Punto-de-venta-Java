@@ -18,12 +18,12 @@ public class frmProductosMenu extends javax.swing.JFrame {
         btnAñadir = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        btnCargar = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         btnCerrar = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        btnCargar = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setFocusable(false);
         setUndecorated(true);
@@ -73,20 +73,6 @@ public class frmProductosMenu extends javax.swing.JFrame {
 
         jPanel2.add(btnAñadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 65, 224, 55));
 
-        btnCargar.setBackground(new java.awt.Color(34, 87, 126));
-        btnCargar.setForeground(new java.awt.Color(241, 241, 241));
-        btnCargar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setFont(new java.awt.Font("Roboto Medium", 0, 25)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(241, 241, 241));
-        jLabel5.setText("Cargar");
-        btnCargar.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 13, -1, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/global/cargar.png"))); // NOI18N
-        btnCargar.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 5, 45, 45));
-
-        jPanel2.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 135, 224, 55));
-
         btnCerrar.setBackground(new java.awt.Color(34, 87, 126));
         btnCerrar.setForeground(new java.awt.Color(241, 241, 241));
         btnCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -116,6 +102,35 @@ public class frmProductosMenu extends javax.swing.JFrame {
 
         jPanel2.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 205, 224, 55));
 
+        btnCargar.setBackground(new java.awt.Color(34, 87, 126));
+        btnCargar.setForeground(new java.awt.Color(241, 241, 241));
+        btnCargar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCargar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCargarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCargarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCargarMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnCargarMousePressed(evt);
+            }
+        });
+        btnCargar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setFont(new java.awt.Font("Roboto Medium", 0, 25)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(241, 241, 241));
+        jLabel5.setText("Cargar");
+        btnCargar.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 13, -1, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/global/cargar.png"))); // NOI18N
+        btnCargar.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 5, 45, 45));
+
+        jPanel2.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 135, 224, 55));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -132,16 +147,8 @@ public class frmProductosMenu extends javax.swing.JFrame {
 
     // ---- EVENTOS Y ESTILOS btnAñadirProducto ----
     private void btnAñadirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAñadirMouseClicked
-        /*
-        btnAñadir.setBackground(new Color(0x2b628c));
-        frmMenu menu = new frmMenu();
-        frmProductos agregar = new frmProductos();
-        menu.dispose();
-        agregar.setVisible(true);
-        this.dispose();
-        */
-        frmMenu menu = new frmMenu();
-        menu.dispose();
+        frmProductos productos = new frmProductos();
+        productos.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAñadirMouseClicked
     private void btnAñadirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAñadirMouseEntered
@@ -157,6 +164,8 @@ public class frmProductosMenu extends javax.swing.JFrame {
     // ---- EVENTOS Y ESTILOS btnCerrar ----
     private void btnCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseClicked
         btnCerrar.setBackground(new Color(0x2b628c));
+        frmMenu menu = new frmMenu();
+        menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnCerrarMouseClicked
     private void btnCerrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseEntered
@@ -168,6 +177,19 @@ public class frmProductosMenu extends javax.swing.JFrame {
     private void btnCerrarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMousePressed
         btnCerrar.setBackground(new Color(0x2b5574));
     }//GEN-LAST:event_btnCerrarMousePressed
+
+    private void btnCargarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCargarMouseClicked
+        btnCargar.setBackground(new Color(0x2b628c));
+    }//GEN-LAST:event_btnCargarMouseClicked
+    private void btnCargarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCargarMouseEntered
+        btnCargar.setBackground(new Color(0x2b628c));
+    }//GEN-LAST:event_btnCargarMouseEntered
+    private void btnCargarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCargarMouseExited
+        btnCargar.setBackground(new Color(0x22577E));
+    }//GEN-LAST:event_btnCargarMouseExited
+    private void btnCargarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCargarMousePressed
+        btnCargar.setBackground(new Color(0x2b5574));
+    }//GEN-LAST:event_btnCargarMousePressed
 
 
     public static void main(String args[]) {
@@ -210,7 +232,7 @@ public class frmProductosMenu extends javax.swing.JFrame {
     private javax.swing.JPanel btnCargar;
     private javax.swing.JPanel btnCerrar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

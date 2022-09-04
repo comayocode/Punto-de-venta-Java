@@ -203,6 +203,11 @@ public class frmProductos extends javax.swing.JFrame {
         jPanel1.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 32, 1080, 60));
 
         body.setBackground(new java.awt.Color(241, 241, 241));
+        body.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                bodyMousePressed(evt);
+            }
+        });
         body.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel4.setBackground(new java.awt.Color(16, 15, 15));
@@ -290,9 +295,14 @@ public class frmProductos extends javax.swing.JFrame {
 
         txtBuscar.setBackground(new java.awt.Color(241, 241, 241));
         txtBuscar.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        txtBuscar.setForeground(new java.awt.Color(151, 151, 151));
+        txtBuscar.setForeground(new java.awt.Color(102, 102, 102));
         txtBuscar.setText("Nombre del Producto");
         txtBuscar.setBorder(null);
+        txtBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtBuscarMousePressed(evt);
+            }
+        });
         txtBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBuscarActionPerformed(evt);
@@ -452,7 +462,6 @@ public class frmProductos extends javax.swing.JFrame {
     private void btnAñadirProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAñadirProductoMouseClicked
         frmProductosAñadir añadir = new frmProductosAñadir();
         añadir.setVisible(true);
-        this.setEnabled(false);
         
         btnAñadirProducto.setBackground(new Color(0x2b628c));
     }//GEN-LAST:event_btnAñadirProductoMouseClicked
@@ -509,6 +518,26 @@ public class frmProductos extends javax.swing.JFrame {
         btnBuscar.setBackground(new Color(0x2b5574));
     }//GEN-LAST:event_btnBuscarMousePressed
 
+    private void txtBuscarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBuscarMousePressed
+        if(txtBuscar.getText().equals("Nombre del Producto")){
+            txtBuscar.setText(""); //Vaciar el campo
+            txtBuscar.setForeground(new Color(0x100F0F)); //Cambiar el color de letra
+        }
+    }//GEN-LAST:event_txtBuscarMousePressed
+
+    private void bodyMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bodyMousePressed
+        llenarCampoVacio();
+    }//GEN-LAST:event_bodyMousePressed
+
+    public void llenarCampoVacio(){
+        //Validar que el campo usuario esté vacío(is.Empty())
+        if(txtBuscar.getText().isEmpty()){
+            txtBuscar.setText("Nombre del Producto");
+            txtBuscar.setForeground(new Color(0x666666));
+        }
+    }
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

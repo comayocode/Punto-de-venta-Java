@@ -2,9 +2,9 @@ package vista;
 
 import java.awt.Color;
 
-public class frmProductosAñadir extends javax.swing.JFrame {
+public class frmProductosEditar extends javax.swing.JFrame {
 
-    public frmProductosAñadir() {
+    public frmProductosEditar() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -95,8 +95,8 @@ public class frmProductosAñadir extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Roboto Medium", 0, 25)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(241, 241, 241));
-        jLabel2.setText("Añadir Producto");
-        header.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 17, -1, -1));
+        jLabel2.setText("Modificar Producto");
+        header.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 17, -1, -1));
 
         bg.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 37, 284, 63));
 
@@ -131,7 +131,7 @@ public class frmProductosAñadir extends javax.swing.JFrame {
         txtProducto.setBackground(new java.awt.Color(241, 241, 241));
         txtProducto.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         txtProducto.setForeground(new java.awt.Color(102, 102, 102));
-        txtProducto.setText("Ingrese el Producto");
+        txtProducto.setText("Nuevo Nombre");
         txtProducto.setBorder(null);
         txtProducto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -159,7 +159,7 @@ public class frmProductosAñadir extends javax.swing.JFrame {
         btnGuardar.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         btnGuardar.setForeground(new java.awt.Color(241, 241, 241));
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/productos/Guardar Producto.png"))); // NOI18N
-        btnGuardar.setText("Guardar");
+        btnGuardar.setText("Modificar");
         btnGuardar.setBorderPainted(false);
         btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardar.setFocusable(false);
@@ -274,20 +274,21 @@ public class frmProductosAñadir extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmProductosAñadir.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmProductosEditar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmProductosAñadir.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmProductosEditar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmProductosAñadir.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmProductosEditar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmProductosAñadir.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmProductosEditar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmProductosAñadir().setVisible(true);
+                new frmProductosEditar().setVisible(true);
             }
         });
     }

@@ -1,6 +1,7 @@
 package vista;
 
 import java.awt.Color;
+import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 
 public class frmMenu extends javax.swing.JFrame {
@@ -523,6 +524,7 @@ public class frmMenu extends javax.swing.JFrame {
         frmProductosMenu menuProductos = new frmProductosMenu();
         //this.setEnabled(false); //Bloquear Menu al abrir las opciones
         menuProductos.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnProductsMouseClicked
     private void btnProductsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductsMouseEntered
         btnProducts.setBackground(new Color(0x2b628c));
