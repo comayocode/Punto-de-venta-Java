@@ -1,6 +1,9 @@
 package vista;
 
 import java.awt.Color;
+import java.awt.Font;
+import javax.swing.table.JTableHeader;
+import utilidades.jtable.pintar_tablas.pintarProductos;
 
 public class frmProductos extends javax.swing.JFrame {
 
@@ -9,6 +12,11 @@ public class frmProductos extends javax.swing.JFrame {
     public frmProductos() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        //Llamar estilos de la tabla
+        editarHeaderJtable();
+        pintarProductos.pintar();
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -373,20 +381,52 @@ public class frmProductos extends javax.swing.JFrame {
 
         body.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(962, 135, 40, 35));
 
+        tbListaProductos.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         tbListaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {},
-                {},
-                {},
-                {}
+                {"001", "Pierna de pollo", "1000", "2000", "12"},
+                {"002", "Muslo de pollo", "1000", "2000", "16"},
+                {"003", "Cerdo", "1000", "2000", "2"},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-
+                "Codigo", "Producto", "Precio Compra", "Precio Venta", "Stock"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tbListaProductos.setMinimumSize(new java.awt.Dimension(105, 530));
+        tbListaProductos.setPreferredSize(new java.awt.Dimension(525, 530));
+        tbListaProductos.setRowHeight(25);
+        tbListaProductos.setShowGrid(true);
+        tbListaProductos.setShowVerticalLines(true);
+        tbListaProductos.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tbListaProductos);
 
-        body.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 191, 1046, 415));
+        body.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 191, 1046, 406));
 
         jPanel1.add(body, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 92, 1080, 623));
 
@@ -537,6 +577,19 @@ public class frmProductos extends javax.swing.JFrame {
         }
     }
     
+    // ---- ESTILOS PARA JTABLE ----
+    
+    //Método para editar el Header del jtable
+    private void editarHeaderJtable(){
+        JTableHeader header = tbListaProductos.getTableHeader();
+        header.setFont(new Font("Roboto", Font.BOLD, 16));
+        header.setForeground(new Color(0xF1F1F1));
+        header.setOpaque(false);
+        tbListaProductos.getTableHeader().setBackground(new Color(0x100F0F));
+    }
+    
+    
+    
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -600,7 +653,7 @@ public class frmProductos extends javax.swing.JFrame {
     private javax.swing.JLabel lbListaProductos;
     private javax.swing.JLabel lbMinimizar;
     private javax.swing.JPanel lineaBuscar;
-    private javax.swing.JTable tbListaProductos;
+    public static javax.swing.JTable tbListaProductos;
     private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }
