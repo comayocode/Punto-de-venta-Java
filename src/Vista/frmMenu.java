@@ -584,6 +584,9 @@ public class frmMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVentasMousePressed
 
     private void btnComprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnComprasMouseClicked
+        frmComprasMenu menu = new frmComprasMenu();
+        menu.setVisible(true);
+        this.dispose();
         btnCompras.setBackground(new Color(0x2b628c));
     }//GEN-LAST:event_btnComprasMouseClicked
     private void btnComprasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnComprasMouseEntered
