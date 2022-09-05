@@ -1,6 +1,12 @@
 package vista;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import utilidades.jtable.pintar_tablas.pintarProveedores;
 
 public class frmProveedores extends javax.swing.JFrame {
@@ -13,6 +19,75 @@ public class frmProveedores extends javax.swing.JFrame {
         setTitle("Proveedores");
         pintarProveedores.pintar();
         pintarProveedores.editarHeaderJtable();
+        inicarpopUpMenuTabla();
+    }
+    
+    //Método para editar estilo y acciones del Joption.showConfirmDialog
+    public void confirmarEliminar() {
+        
+        // --- ESTILOS ---
+        //Añadir las opciones a un arreglo
+        Object[] botones = {"Confirmar", "Cancelar"};
+        
+        //Guardar la selección de opción en una variable
+        int opcion = JOptionPane.showOptionDialog(null, //Centrar ventana
+                "¿Seguro que quiere eliminar el Proveedor?", //Mensaje/Pregunta
+                "Eliminar Proveedor", //Titulo de la ventana
+                JOptionPane.YES_NO_OPTION, //Opción Confirmar
+                JOptionPane.QUESTION_MESSAGE, //Opción Cancelar
+                null, //No usar icono
+                botones, //Titulo de los botones
+                botones[0]); //Botones
+
+        // --- ACCIONES ---
+        //Validar la opción escogida
+        if (opcion == JOptionPane.YES_OPTION){ //Si la opción es "Confirmar"...
+            //Codigo a ejecutar aquí
+            JOptionPane.showMessageDialog(null, "Eliminado", "Proveedor eliminado", JOptionPane.NO_OPTION);
+        } else if (opcion == JOptionPane.YES_NO_OPTION) { //Si la opción es "Cancelar"
+            //No hacer nada
+            setDefaultCloseOperation(frmMenu.DO_NOTHING_ON_CLOSE);
+        }
+    }
+    
+    //Opciones de menu al dar clic derecho en la tabla
+    public void inicarpopUpMenuTabla(){
+        JMenuItem modificar = new JMenuItem("Modificar", getIcon("/img/clientes/edit.png", 20, 20));
+        JMenuItem eliminar = new JMenuItem("Eliminar", getIcon("/img/clientes/delete.png", 20, 20));
+        
+        //Añadir las opciones al popupmenu
+        menuTabla.add(modificar);
+        menuTabla.add(eliminar);
+        
+        tbListaProveedores.setComponentPopupMenu(menuTabla); //Le pasamos el popupMenu a la tabla
+        
+        // ----- AÑADIR LAS ACCIONES PARA CADA OPCION -----
+        
+        //Acción de la opción "editar"
+        modificar.addActionListener(new ActionListener() {  //Si la opcion escogida es "Modificar"
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //Codigo a ejecutar
+                frmProveedoresModificar modificar = new frmProveedoresModificar();
+                modificar.setVisible(true);
+            }
+        });
+        
+        //Acción de la opción "Eliminar"
+        eliminar.addActionListener(new ActionListener() { //Si la opción escogida es "Eliminar"
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //Codigo a ejecutar
+                confirmarEliminar();
+            }
+        });
+    }
+    
+    //Método para obtener icono
+    public Icon getIcon(String ruta, int width, int height){
+        Icon miicono = new ImageIcon(new ImageIcon(getClass().getResource(ruta)).getImage().getScaledInstance(width, height, 0));
+        return miicono;
+                
     }
     
     public void llenarCampoVacio(){
@@ -27,6 +102,7 @@ public class frmProveedores extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        menuTabla = new javax.swing.JPopupMenu();
         jPanel1 = new javax.swing.JPanel();
         jpBarraSuperior = new javax.swing.JPanel();
         jpExit = new javax.swing.JPanel();
@@ -581,6 +657,7 @@ public class frmProveedores extends javax.swing.JFrame {
     private javax.swing.JLabel lbHeader1;
     private javax.swing.JLabel lbMinimizar;
     private javax.swing.JPanel lineaBuscar;
+    private javax.swing.JPopupMenu menuTabla;
     public static javax.swing.JTable tbListaProveedores;
     private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables

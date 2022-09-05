@@ -20,7 +20,7 @@ public class frmClientes extends javax.swing.JFrame {
         setTitle("Clientes");
         pintarClientes.pintar();
         pintarClientes.editarHeaderJtable();
-        inicarMenuTabla();
+        inicarpopUpMenuTabla();
     }
     
     //Método para editar estilo y acciones del Joption.showConfirmDialog
@@ -52,7 +52,7 @@ public class frmClientes extends javax.swing.JFrame {
     }
     
     //Opciones de menu al dar clic derecho en la tabla
-    public void inicarMenuTabla(){
+    public void inicarpopUpMenuTabla(){
         JMenuItem modificar = new JMenuItem("Modificar", getIcon("/img/clientes/edit.png", 20, 20));
         JMenuItem eliminar = new JMenuItem("Eliminar", getIcon("/img/clientes/delete.png", 20, 20));
         
@@ -63,8 +63,9 @@ public class frmClientes extends javax.swing.JFrame {
         tbListaClientes.setComponentPopupMenu(menuTabla); //Le pasamos el popupMenu a la tabla
         
         // ----- AÑADIR LAS ACCIONES PARA CADA OPCION -----
+        
         //Acción de la opción "editar"
-        modificar.addActionListener(new ActionListener() { //Si la opcion escogida es "Modificar"
+        modificar.addActionListener(new ActionListener() {  //Si la opcion escogida es "Modificar"
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Codigo a ejecutar
@@ -659,7 +660,7 @@ public class frmClientes extends javax.swing.JFrame {
     private javax.swing.JLabel lbHeader1;
     private javax.swing.JLabel lbMinimizar;
     private javax.swing.JPanel lineaBuscar;
-    private javax.swing.JPopupMenu menuTabla;
+    public static javax.swing.JPopupMenu menuTabla;
     public static javax.swing.JTable tbListaClientes;
     private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables

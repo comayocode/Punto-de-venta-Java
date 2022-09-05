@@ -132,7 +132,7 @@ public class frmProductosModificar extends javax.swing.JFrame {
         txtProducto.setBackground(new java.awt.Color(241, 241, 241));
         txtProducto.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         txtProducto.setForeground(new java.awt.Color(102, 102, 102));
-        txtProducto.setText("Nuevo Nombre");
+        txtProducto.setText("Modificar Nombre");
         txtProducto.setBorder(null);
         txtProducto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -208,7 +208,7 @@ public class frmProductosModificar extends javax.swing.JFrame {
 
     private void txtProductoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtProductoMousePressed
         //Validar que el texto del campo sea igual a "Ingrese el Producto"
-        if(txtProducto.getText().equals("Ingrese el Producto")){
+        if(txtProducto.getText().equals("Modificar Nombre")){
             txtProducto.setText(""); //Vaciar el campo
             txtProducto.setForeground(new Color(0x100F0F)); //Cambiar el color de letra
         }
@@ -232,7 +232,7 @@ public class frmProductosModificar extends javax.swing.JFrame {
     public void llenarCampoVacio(){
         //Validar que el campo usuario esté vacío(is.Empty())
         if(txtProducto.getText().isEmpty()){
-            txtProducto.setText("Ingrese el Producto");
+            txtProducto.setText("Modificar Nombre");
             txtProducto.setForeground(new Color(0x666666));
         }
     }
