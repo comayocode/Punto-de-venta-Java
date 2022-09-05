@@ -1,4 +1,4 @@
-package utilidades.jtable.color_intercalado;
+package utilidades.jtable.pintar_tablas;
 
 import java.awt.Color;
 import java.awt.Component;

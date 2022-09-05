@@ -2,7 +2,6 @@ package utilidades.jtable.pintar_tablas;
 
 import java.awt.Color;
 import java.awt.Font;
-import utilidades.jtable.color_intercalado.colorIntercaladoCeldasJTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import vista.frmClientes;
