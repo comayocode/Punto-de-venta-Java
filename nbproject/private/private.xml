@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/02%20DOCUMENTOS/Documentos/01%20COMAYAN%20SERVICE/04.%20GESTOR%20INVENTARIO/CRUDMVC%20-%20Version%20Renovada/src/vista/frmClientes.java</file>
-            <file>file:/E:/02%20DOCUMENTOS/Documentos/01%20COMAYAN%20SERVICE/04.%20GESTOR%20INVENTARIO/CRUDMVC%20-%20Version%20Renovada/src/vista/frmComprasAgregar.java</file>
-            <file>file:/E:/02%20DOCUMENTOS/Documentos/01%20COMAYAN%20SERVICE/04.%20GESTOR%20INVENTARIO/CRUDMVC%20-%20Version%20Renovada/src/utilidades/jtable/pintar_tablas/pintarComprasAgregar.java</file>
+            <file>file:/E:/02%20DOCUMENTOS/Documentos/01%20COMAYAN%20SERVICE/04.%20GESTOR%20INVENTARIO/CRUDMVC%20-%20Version%20Renovada/src/vista/frmVentasMenu.java</file>
+            <file>file:/E:/02%20DOCUMENTOS/Documentos/01%20COMAYAN%20SERVICE/04.%20GESTOR%20INVENTARIO/CRUDMVC%20-%20Version%20Renovada/src/utilidades/jtable/pintar_tablas/pintarVentasAgregar.java</file>
+            <file>file:/E:/02%20DOCUMENTOS/Documentos/01%20COMAYAN%20SERVICE/04.%20GESTOR%20INVENTARIO/CRUDMVC%20-%20Version%20Renovada/src/utilidades/jtable/pintar_tablas/pintarVentasLista.java</file>
+            <file>file:/E:/02%20DOCUMENTOS/Documentos/01%20COMAYAN%20SERVICE/04.%20GESTOR%20INVENTARIO/CRUDMVC%20-%20Version%20Renovada/src/vista/frmVentasAgregar.java</file>
+            <file>file:/E:/02%20DOCUMENTOS/Documentos/01%20COMAYAN%20SERVICE/04.%20GESTOR%20INVENTARIO/CRUDMVC%20-%20Version%20Renovada/src/vista/frmVentasLista.java</file>
         </group>
     </open-files>
 </project-private>
