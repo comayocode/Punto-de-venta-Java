@@ -25,7 +25,7 @@ public class frmComprasMenu extends javax.swing.JFrame {
         btnCargar = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        btnCargar1 = new javax.swing.JPanel();
+        btnLista = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
 
@@ -135,34 +135,34 @@ public class frmComprasMenu extends javax.swing.JFrame {
 
         jPanel2.add(btnCargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 224, 55));
 
-        btnCargar1.setBackground(new java.awt.Color(34, 87, 126));
-        btnCargar1.setForeground(new java.awt.Color(241, 241, 241));
-        btnCargar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCargar1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnLista.setBackground(new java.awt.Color(34, 87, 126));
+        btnLista.setForeground(new java.awt.Color(241, 241, 241));
+        btnLista.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLista.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCargar1MouseClicked(evt);
+                btnListaMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnCargar1MouseEntered(evt);
+                btnListaMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnCargar1MouseExited(evt);
+                btnListaMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnCargar1MousePressed(evt);
+                btnListaMousePressed(evt);
             }
         });
-        btnCargar1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        btnLista.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setFont(new java.awt.Font("Roboto Medium", 0, 25)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(241, 241, 241));
         jLabel8.setText("Lista");
-        btnCargar1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 13, -1, -1));
+        btnLista.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 13, -1, -1));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/compras/lista.png"))); // NOI18N
-        btnCargar1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 5, 45, 45));
+        btnLista.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 5, 45, 45));
 
-        jPanel2.add(btnCargar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 224, 55));
+        jPanel2.add(btnLista, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 224, 55));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -224,24 +224,27 @@ public class frmComprasMenu extends javax.swing.JFrame {
         btnCargar.setBackground(new Color(0x22577E));
     }//GEN-LAST:event_btnCargarMouseExited
     private void btnCargarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCargarMousePressed
-        btnCargar.setBackground(new Color(0x2b5574));
+        
     }//GEN-LAST:event_btnCargarMousePressed
 
-    private void btnCargar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCargar1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCargar1MouseClicked
+    private void btnListaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnListaMouseClicked
+        frmComprasLista lista = new frmComprasLista();
+        lista.setVisible(true);
+        this.dispose();
+        btnLista.setBackground(new Color(0x2b628c));
+    }//GEN-LAST:event_btnListaMouseClicked
 
-    private void btnCargar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCargar1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCargar1MouseEntered
+    private void btnListaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnListaMouseEntered
+        btnLista.setBackground(new Color(0x2b628c));
+    }//GEN-LAST:event_btnListaMouseEntered
 
-    private void btnCargar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCargar1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCargar1MouseExited
+    private void btnListaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnListaMouseExited
+        btnLista.setBackground(new Color(0x22577E));
+    }//GEN-LAST:event_btnListaMouseExited
 
-    private void btnCargar1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCargar1MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCargar1MousePressed
+    private void btnListaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnListaMousePressed
+        btnLista.setBackground(new Color(0x2b5574));
+    }//GEN-LAST:event_btnListaMousePressed
 
 
     public static void main(String args[]) {
@@ -274,6 +277,30 @@ public class frmComprasMenu extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -286,8 +313,8 @@ public class frmComprasMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnAñadir;
     private javax.swing.JPanel btnCargar;
-    private javax.swing.JPanel btnCargar1;
     private javax.swing.JPanel btnCerrar;
+    private javax.swing.JPanel btnLista;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

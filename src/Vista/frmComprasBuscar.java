@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import utilidades.jtable.pintar_tablas.pintarCompasBuscar;
+import utilidades.jtable.pintar_tablas.pintarComprasBuscar;
 
 public class frmComprasBuscar extends javax.swing.JFrame {
 
@@ -16,8 +16,8 @@ public class frmComprasBuscar extends javax.swing.JFrame {
     public frmComprasBuscar() {
         initComponents();
         this.setLocationRelativeTo(null);
-        pintarCompasBuscar.pintar();
-        pintarCompasBuscar.editarHeaderJtable();
+        pintarComprasBuscar.pintar();
+        pintarComprasBuscar.editarHeaderJtable();
         inicarpopUpMenuTabla();
 
     }
@@ -88,6 +88,7 @@ public class frmComprasBuscar extends javax.swing.JFrame {
         txtNitProveedor.setText("");
         txtProveedor.setText("");
     }
+    // ----- FIN LIMPIAR CAMPOS -----
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -305,13 +306,13 @@ public class frmComprasBuscar extends javax.swing.JFrame {
         jLabel2.setBackground(new java.awt.Color(16, 15, 15));
         jLabel2.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(16, 15, 15));
-        jLabel2.setText("Codigo Compra");
+        jLabel2.setText("Cod. Compra");
         jpBuscarCompra.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 21, -1, -1));
 
         txtCodigoCompra.setBackground(new java.awt.Color(217, 217, 217));
         txtCodigoCompra.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         txtCodigoCompra.setBorder(null);
-        jpBuscarCompra.add(txtCodigoCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 20, 111, 25));
+        jpBuscarCompra.add(txtCodigoCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 20, 117, 25));
 
         separador.setBackground(new java.awt.Color(16, 15, 15));
 
@@ -319,14 +320,14 @@ public class frmComprasBuscar extends javax.swing.JFrame {
         separador.setLayout(separadorLayout);
         separadorLayout.setHorizontalGroup(
             separadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 111, Short.MAX_VALUE)
+            .addGap(0, 117, Short.MAX_VALUE)
         );
         separadorLayout.setVerticalGroup(
             separadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jpBuscarCompra.add(separador, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 45, 111, 2));
+        jpBuscarCompra.add(separador, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 45, 117, 2));
 
         btnBuscar.setBackground(new java.awt.Color(34, 87, 126));
         btnBuscar.setForeground(new java.awt.Color(241, 241, 241));
