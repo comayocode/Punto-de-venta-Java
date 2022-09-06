@@ -1,0 +1,956 @@
+package vista;
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import utilidades.jtable.pintar_tablas.pintarVentasAgregar;
+
+public class frmVentasAgregar extends javax.swing.JFrame {
+
+    int xMouse, yMouse;
+
+    public frmVentasAgregar() {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        pintarVentasAgregar.pintar();
+        pintarVentasAgregar.editarHeaderJtable();
+        inicarpopUpMenuTabla();
+
+    }
+
+    // ----- INICIO CÓDIGO POPUPMENU JTABLE -----
+    //Método para editar estilo y acciones del Joption.showConfirmDialog
+    public void confirmarEliminar() {
+
+        // --- ESTILOS ---
+        //Añadir las opciones a un arreglo
+        Object[] botones = {"Confirmar", "Cancelar"};
+
+        //Guardar la selección de opción en una variable
+        int opcion = JOptionPane.showOptionDialog(null, //Centrar ventana
+                "¿Seguro que quiere eliminar de la lista de Compra?", //Mensaje/Pregunta
+                "Eliminar Compra", //Titulo de la ventana
+                JOptionPane.YES_NO_OPTION, //Opción Confirmar
+                JOptionPane.QUESTION_MESSAGE, //Opción Cancelar
+                null, //No usar icono
+                botones, //Titulo de los botones
+                botones[0]); //Botones
+
+        // --- ACCIONES ---
+        //Validar la opción escogida
+        if (opcion == JOptionPane.YES_OPTION) { //Si la opción es "Confirmar"...
+            //Codigo a ejecutar aquí
+            JOptionPane.showMessageDialog(null, "Eliminado", "Compra eliminada", JOptionPane.NO_OPTION);
+        } else if (opcion == JOptionPane.YES_NO_OPTION) { //Si la opción es "Cancelar"
+            //No hacer nada
+            setDefaultCloseOperation(frmMenu.DO_NOTHING_ON_CLOSE);
+        }
+    }
+
+    //Opciones de menu al dar clic derecho en la tabla
+    public void inicarpopUpMenuTabla() {
+        JMenuItem eliminar = new JMenuItem("Eliminar", getIcon("/img/clientes/delete.png", 20, 20));
+
+        //Añadir las opciones al popupmenu
+        menuTabla.add(eliminar);
+
+        tbParaVender.setComponentPopupMenu(menuTabla); //Le pasamos el popupMenu a la tabla
+
+        // ----- AÑADIR LAS ACCIONES PARA CADA OPCION -----
+        //Acción de la opción "Eliminar"
+        eliminar.addActionListener(new ActionListener() { //Si la opción escogida es "Eliminar"
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //Codigo a ejecutar
+                confirmarEliminar();
+            }
+        });
+    }
+
+    //Método para obtener icono
+    public Icon getIcon(String ruta, int width, int height) {
+        Icon miicono = new ImageIcon(new ImageIcon(getClass().getResource(ruta)).getImage().getScaledInstance(width, height, 0));
+        return miicono;
+
+    }
+    // ----- FIN CÓDIGO POPUPMENU JTABLE -----
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        menuTabla = new javax.swing.JPopupMenu();
+        jPanel1 = new javax.swing.JPanel();
+        jpBarraSuperior = new javax.swing.JPanel();
+        jpExit = new javax.swing.JPanel();
+        lbExit = new javax.swing.JLabel();
+        jpMinimizar = new javax.swing.JPanel();
+        lbMinimizar = new javax.swing.JLabel();
+        jpAtras = new javax.swing.JPanel();
+        lbAtras = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        header = new javax.swing.JPanel();
+        lbLogo = new javax.swing.JLabel();
+        lbTittle = new javax.swing.JLabel();
+        txtFechaGenerada = new javax.swing.JTextField();
+        txtCodigoGenerado = new javax.swing.JTextField();
+        lbFecha = new javax.swing.JLabel();
+        lbCodigo = new javax.swing.JLabel();
+        body = new javax.swing.JPanel();
+        jpAgregarCompra = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        txtIdCliente = new javax.swing.JTextField();
+        separador = new javax.swing.JPanel();
+        btnBuscar = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtCodigoProducto = new javax.swing.JTextField();
+        btnBuscar2 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        separador1 = new javax.swing.JPanel();
+        txtCantidad = new javax.swing.JTextField();
+        separador2 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        txtStock = new javax.swing.JTextField();
+        separador3 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        txtCliente = new javax.swing.JTextField();
+        separador4 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        txtProducto = new javax.swing.JTextField();
+        separador5 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        txtPrecioVenta = new javax.swing.JTextField();
+        separador6 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        btnAgregarVenta = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        btnCancelarVenta = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        btnGenerarVenta = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jpTabla = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbParaVender = new javax.swing.JTable();
+        txtTotal = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jpBarraSuperior.setBackground(new java.awt.Color(16, 15, 15));
+        jpBarraSuperior.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jpBarraSuperiorMouseDragged(evt);
+            }
+        });
+        jpBarraSuperior.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jpBarraSuperiorMousePressed(evt);
+            }
+        });
+        jpBarraSuperior.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jpExit.setBackground(new java.awt.Color(16, 15, 15));
+        jpExit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpExit.setPreferredSize(new java.awt.Dimension(50, 50));
+
+        lbExit.setBackground(new java.awt.Color(241, 241, 241));
+        lbExit.setFont(new java.awt.Font("Roboto Light", 1, 28)); // NOI18N
+        lbExit.setForeground(new java.awt.Color(241, 241, 241));
+        lbExit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbExit.setText("X");
+        lbExit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lbExit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbExitMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lbExitMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lbExitMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jpExitLayout = new javax.swing.GroupLayout(jpExit);
+        jpExit.setLayout(jpExitLayout);
+        jpExitLayout.setHorizontalGroup(
+            jpExitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpExitLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lbExit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jpExitLayout.setVerticalGroup(
+            jpExitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpExitLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lbExit, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jpBarraSuperior.add(jpExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, -1, 32));
+
+        jpMinimizar.setBackground(new java.awt.Color(16, 15, 15));
+        jpMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpMinimizar.setPreferredSize(new java.awt.Dimension(50, 50));
+        jpMinimizar.setVerifyInputWhenFocusTarget(false);
+
+        lbMinimizar.setBackground(new java.awt.Color(241, 241, 241));
+        lbMinimizar.setFont(new java.awt.Font("Roboto Medium", 0, 28)); // NOI18N
+        lbMinimizar.setForeground(new java.awt.Color(241, 241, 241));
+        lbMinimizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbMinimizar.setText("—");
+        lbMinimizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lbMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbMinimizarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lbMinimizarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lbMinimizarMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jpMinimizarLayout = new javax.swing.GroupLayout(jpMinimizar);
+        jpMinimizar.setLayout(jpMinimizarLayout);
+        jpMinimizarLayout.setHorizontalGroup(
+            jpMinimizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpMinimizarLayout.createSequentialGroup()
+                .addComponent(lbMinimizar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jpMinimizarLayout.setVerticalGroup(
+            jpMinimizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMinimizarLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lbMinimizar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jpBarraSuperior.add(jpMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 50, 32));
+
+        jpAtras.setBackground(new java.awt.Color(16, 15, 15));
+        jpAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpAtras.setPreferredSize(new java.awt.Dimension(50, 50));
+        jpAtras.setVerifyInputWhenFocusTarget(false);
+
+        lbAtras.setBackground(new java.awt.Color(241, 241, 241));
+        lbAtras.setFont(new java.awt.Font("Roboto Medium", 0, 28)); // NOI18N
+        lbAtras.setForeground(new java.awt.Color(241, 241, 241));
+        lbAtras.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbAtras.setText("<");
+        lbAtras.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lbAtras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbAtrasMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lbAtrasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lbAtrasMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jpAtrasLayout = new javax.swing.GroupLayout(jpAtras);
+        jpAtras.setLayout(jpAtrasLayout);
+        jpAtrasLayout.setHorizontalGroup(
+            jpAtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpAtrasLayout.createSequentialGroup()
+                .addComponent(lbAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jpAtrasLayout.setVerticalGroup(
+            jpAtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpAtrasLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lbAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jpBarraSuperior.add(jpAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 50, 32));
+
+        jLabel1.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(241, 241, 241));
+        jLabel1.setText(".: Ventas :.");
+        jpBarraSuperior.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 5, 150, 23));
+
+        jPanel1.add(jpBarraSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 32));
+
+        header.setBackground(new java.awt.Color(34, 87, 126));
+        header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lbLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/compras/logo70.png"))); // NOI18N
+        header.add(lbLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 15, 70, 70));
+
+        lbTittle.setBackground(new java.awt.Color(241, 241, 241));
+        lbTittle.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
+        lbTittle.setForeground(new java.awt.Color(241, 241, 241));
+        lbTittle.setText("Nueva Venta");
+        header.add(lbTittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 32, -1, -1));
+
+        txtFechaGenerada.setEditable(false);
+        txtFechaGenerada.setBackground(new java.awt.Color(16, 15, 15));
+        txtFechaGenerada.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtFechaGenerada.setForeground(new java.awt.Color(241, 241, 241));
+        txtFechaGenerada.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtFechaGenerada.setText("16/08/2022");
+        txtFechaGenerada.setBorder(null);
+        header.add(txtFechaGenerada, new org.netbeans.lib.awtextra.AbsoluteConstraints(541, 23, 110, 25));
+
+        txtCodigoGenerado.setEditable(false);
+        txtCodigoGenerado.setBackground(new java.awt.Color(16, 15, 15));
+        txtCodigoGenerado.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        txtCodigoGenerado.setForeground(new java.awt.Color(241, 241, 241));
+        txtCodigoGenerado.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCodigoGenerado.setText("Autogenerado");
+        txtCodigoGenerado.setBorder(null);
+        header.add(txtCodigoGenerado, new org.netbeans.lib.awtextra.AbsoluteConstraints(541, 53, 110, 25));
+
+        lbFecha.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        lbFecha.setForeground(new java.awt.Color(241, 241, 241));
+        lbFecha.setText("Fecha");
+        header.add(lbFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 29, -1, -1));
+
+        lbCodigo.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
+        lbCodigo.setForeground(new java.awt.Color(241, 241, 241));
+        lbCodigo.setText("Código");
+        header.add(lbCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 57, -1, -1));
+
+        jPanel1.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 32, 670, 100));
+
+        body.setBackground(new java.awt.Color(241, 241, 241));
+        body.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jpAgregarCompra.setBackground(new java.awt.Color(241, 241, 241));
+        jpAgregarCompra.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(34, 87, 126), 2));
+        jpAgregarCompra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setBackground(new java.awt.Color(16, 15, 15));
+        jLabel2.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(16, 15, 15));
+        jLabel2.setText("ID Cliente:");
+        jpAgregarCompra.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 21, -1, -1));
+
+        txtIdCliente.setBackground(new java.awt.Color(217, 217, 217));
+        txtIdCliente.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
+        txtIdCliente.setBorder(null);
+        jpAgregarCompra.add(txtIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 20, 111, 25));
+
+        separador.setBackground(new java.awt.Color(16, 15, 15));
+
+        javax.swing.GroupLayout separadorLayout = new javax.swing.GroupLayout(separador);
+        separador.setLayout(separadorLayout);
+        separadorLayout.setHorizontalGroup(
+            separadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 111, Short.MAX_VALUE)
+        );
+        separadorLayout.setVerticalGroup(
+            separadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jpAgregarCompra.add(separador, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 45, 111, 2));
+
+        btnBuscar.setBackground(new java.awt.Color(34, 87, 126));
+        btnBuscar.setForeground(new java.awt.Color(241, 241, 241));
+        btnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBuscarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBuscarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBuscarMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnBuscarMousePressed(evt);
+            }
+        });
+        btnBuscar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/compras/buscar18.png"))); // NOI18N
+        btnBuscar.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 5, 18, 18));
+
+        jpAgregarCompra.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 20, 40, 27));
+
+        jLabel3.setBackground(new java.awt.Color(16, 15, 15));
+        jLabel3.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(16, 15, 15));
+        jLabel3.setText("Cod. Producto:");
+        jpAgregarCompra.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 56, -1, -1));
+
+        txtCodigoProducto.setBackground(new java.awt.Color(217, 217, 217));
+        txtCodigoProducto.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
+        txtCodigoProducto.setBorder(null);
+        txtCodigoProducto.setOpaque(true);
+        jpAgregarCompra.add(txtCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 55, 111, 25));
+
+        btnBuscar2.setBackground(new java.awt.Color(34, 87, 126));
+        btnBuscar2.setForeground(new java.awt.Color(241, 241, 241));
+        btnBuscar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscar2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBuscar2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBuscar2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBuscar2MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnBuscar2MousePressed(evt);
+            }
+        });
+        btnBuscar2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/compras/buscar18.png"))); // NOI18N
+        btnBuscar2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 5, 18, 18));
+
+        jpAgregarCompra.add(btnBuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 55, 40, 27));
+
+        separador1.setBackground(new java.awt.Color(16, 15, 15));
+
+        javax.swing.GroupLayout separador1Layout = new javax.swing.GroupLayout(separador1);
+        separador1.setLayout(separador1Layout);
+        separador1Layout.setHorizontalGroup(
+            separador1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 111, Short.MAX_VALUE)
+        );
+        separador1Layout.setVerticalGroup(
+            separador1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jpAgregarCompra.add(separador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 80, 111, 2));
+
+        txtCantidad.setBackground(new java.awt.Color(217, 217, 217));
+        txtCantidad.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
+        txtCantidad.setBorder(null);
+        txtCantidad.setOpaque(true);
+        jpAgregarCompra.add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 90, 111, 25));
+
+        separador2.setBackground(new java.awt.Color(16, 15, 15));
+
+        javax.swing.GroupLayout separador2Layout = new javax.swing.GroupLayout(separador2);
+        separador2.setLayout(separador2Layout);
+        separador2Layout.setHorizontalGroup(
+            separador2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 111, Short.MAX_VALUE)
+        );
+        separador2Layout.setVerticalGroup(
+            separador2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jpAgregarCompra.add(separador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 115, 111, 2));
+
+        jLabel4.setBackground(new java.awt.Color(16, 15, 15));
+        jLabel4.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(16, 15, 15));
+        jLabel4.setText("Cantidad:");
+        jpAgregarCompra.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 91, -1, -1));
+
+        txtStock.setBackground(new java.awt.Color(217, 217, 217));
+        txtStock.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
+        txtStock.setBorder(null);
+        txtStock.setOpaque(true);
+        jpAgregarCompra.add(txtStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 125, 111, 25));
+
+        separador3.setBackground(new java.awt.Color(16, 15, 15));
+
+        javax.swing.GroupLayout separador3Layout = new javax.swing.GroupLayout(separador3);
+        separador3.setLayout(separador3Layout);
+        separador3Layout.setHorizontalGroup(
+            separador3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 111, Short.MAX_VALUE)
+        );
+        separador3Layout.setVerticalGroup(
+            separador3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jpAgregarCompra.add(separador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 150, 111, 2));
+
+        jLabel5.setBackground(new java.awt.Color(16, 15, 15));
+        jLabel5.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(16, 15, 15));
+        jLabel5.setText("Stock:");
+        jpAgregarCompra.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 126, -1, -1));
+
+        txtCliente.setBackground(new java.awt.Color(217, 217, 217));
+        txtCliente.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
+        txtCliente.setBorder(null);
+        txtCliente.setOpaque(true);
+        jpAgregarCompra.add(txtCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(457, 20, 158, 25));
+
+        separador4.setBackground(new java.awt.Color(16, 15, 15));
+
+        javax.swing.GroupLayout separador4Layout = new javax.swing.GroupLayout(separador4);
+        separador4.setLayout(separador4Layout);
+        separador4Layout.setHorizontalGroup(
+            separador4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 158, Short.MAX_VALUE)
+        );
+        separador4Layout.setVerticalGroup(
+            separador4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jpAgregarCompra.add(separador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(457, 45, 158, 2));
+
+        jLabel6.setBackground(new java.awt.Color(16, 15, 15));
+        jLabel6.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(16, 15, 15));
+        jLabel6.setText("Cliente:");
+        jpAgregarCompra.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 21, -1, -1));
+
+        txtProducto.setBackground(new java.awt.Color(217, 217, 217));
+        txtProducto.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
+        txtProducto.setBorder(null);
+        txtProducto.setOpaque(true);
+        jpAgregarCompra.add(txtProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(457, 55, 158, 25));
+
+        separador5.setBackground(new java.awt.Color(16, 15, 15));
+
+        javax.swing.GroupLayout separador5Layout = new javax.swing.GroupLayout(separador5);
+        separador5.setLayout(separador5Layout);
+        separador5Layout.setHorizontalGroup(
+            separador5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 158, Short.MAX_VALUE)
+        );
+        separador5Layout.setVerticalGroup(
+            separador5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jpAgregarCompra.add(separador5, new org.netbeans.lib.awtextra.AbsoluteConstraints(457, 80, 158, 2));
+
+        jLabel7.setBackground(new java.awt.Color(16, 15, 15));
+        jLabel7.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(16, 15, 15));
+        jLabel7.setText("Producto:");
+        jpAgregarCompra.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 56, -1, -1));
+
+        txtPrecioVenta.setBackground(new java.awt.Color(217, 217, 217));
+        txtPrecioVenta.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
+        txtPrecioVenta.setBorder(null);
+        txtPrecioVenta.setOpaque(true);
+        jpAgregarCompra.add(txtPrecioVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(457, 90, 158, 25));
+
+        separador6.setBackground(new java.awt.Color(16, 15, 15));
+
+        javax.swing.GroupLayout separador6Layout = new javax.swing.GroupLayout(separador6);
+        separador6.setLayout(separador6Layout);
+        separador6Layout.setHorizontalGroup(
+            separador6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 158, Short.MAX_VALUE)
+        );
+        separador6Layout.setVerticalGroup(
+            separador6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        jpAgregarCompra.add(separador6, new org.netbeans.lib.awtextra.AbsoluteConstraints(457, 115, 158, 2));
+
+        jLabel8.setBackground(new java.awt.Color(16, 15, 15));
+        jLabel8.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(16, 15, 15));
+        jLabel8.setText("Precio Venta:");
+        jpAgregarCompra.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 91, -1, -1));
+
+        btnAgregarVenta.setBackground(new java.awt.Color(34, 87, 126));
+        btnAgregarVenta.setForeground(new java.awt.Color(241, 241, 241));
+        btnAgregarVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAgregarVenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAgregarVentaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAgregarVentaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAgregarVentaMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnAgregarVentaMousePressed(evt);
+            }
+        });
+        btnAgregarVenta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(241, 241, 241));
+        jLabel10.setText("Agregar Venta");
+        btnAgregarVenta.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 5, -1, -1));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/compras/agregar18.png"))); // NOI18N
+        btnAgregarVenta.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 5, 18, 18));
+
+        jpAgregarCompra.add(btnAgregarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(457, 125, 158, 27));
+
+        body.add(jpAgregarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 14, 636, 170));
+
+        btnCancelarVenta.setBackground(new java.awt.Color(240, 84, 84));
+        btnCancelarVenta.setForeground(new java.awt.Color(241, 241, 241));
+        btnCancelarVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCancelarVenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCancelarVentaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCancelarVentaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCancelarVentaMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnCancelarVentaMousePressed(evt);
+            }
+        });
+        btnCancelarVenta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel13.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(16, 15, 15));
+        jLabel13.setText("Cancelar Venta");
+        btnCancelarVenta.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 6, -1, -1));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/compras/cancelarCompra.png"))); // NOI18N
+        btnCancelarVenta.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 4, 20, 20));
+
+        body.add(btnCancelarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 442, 148, 27));
+
+        btnGenerarVenta.setBackground(new java.awt.Color(34, 87, 126));
+        btnGenerarVenta.setForeground(new java.awt.Color(241, 241, 241));
+        btnGenerarVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGenerarVenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnGenerarVentaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnGenerarVentaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnGenerarVentaMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnGenerarVentaMousePressed(evt);
+            }
+        });
+        btnGenerarVenta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel15.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(241, 241, 241));
+        jLabel15.setText("Generar Venta");
+        btnGenerarVenta.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 6, -1, -1));
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/compras/PagarCompras.png"))); // NOI18N
+        btnGenerarVenta.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 4, 20, 20));
+
+        body.add(btnGenerarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 442, 155, 27));
+
+        jpTabla.setBackground(new java.awt.Color(241, 241, 241));
+        jpTabla.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(34, 87, 126), 2));
+        jpTabla.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tbParaVender.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Pollo", "45", "1200", "120000"},
+                {"Carne", "23", "2000", "120000"},
+                {"Cerdo", "12", "1350", "120000"},
+                {"Pescado", "33", "1700", "120000"}
+            },
+            new String [] {
+                "Producto", "Cantidad", "Precio Compra", "Sub Total"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tbParaVender.setRowHeight(25);
+        tbParaVender.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tbParaVender);
+
+        jpTabla.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 10, 590, 197));
+
+        body.add(jpTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 205, 636, 217));
+
+        txtTotal.setBackground(new java.awt.Color(16, 15, 15));
+        txtTotal.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
+        txtTotal.setForeground(new java.awt.Color(241, 241, 241));
+        txtTotal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtTotal.setText("$ 0.0");
+        txtTotal.setBorder(null);
+        body.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 442, 110, 27));
+
+        jLabel17.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(16, 15, 15));
+        jLabel17.setText("TOTAL");
+        body.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 444, -1, -1));
+
+        jPanel1.add(body, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 132, 670, 481));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void lbExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExitMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_lbExitMouseClicked
+
+    private void lbExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExitMouseEntered
+        jpExit.setBackground(new Color(0xF05454));
+        lbExit.setForeground(new Color(0x100F0F));
+    }//GEN-LAST:event_lbExitMouseEntered
+
+    private void lbExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExitMouseExited
+        jpExit.setBackground(new Color(0x100F0F));
+        lbExit.setForeground(new Color(0xF1F1F1));
+    }//GEN-LAST:event_lbExitMouseExited
+
+    private void lbMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbMinimizarMouseClicked
+        setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_lbMinimizarMouseClicked
+
+    private void lbMinimizarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbMinimizarMouseEntered
+        jpMinimizar.setBackground(new Color(0x4B6587));
+        lbMinimizar.setForeground(new Color(0x100F0F));
+    }//GEN-LAST:event_lbMinimizarMouseEntered
+
+    private void lbMinimizarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbMinimizarMouseExited
+        jpMinimizar.setBackground(new Color(0x100F0F));
+        lbMinimizar.setForeground(new Color(0xF1F1F1));
+    }//GEN-LAST:event_lbMinimizarMouseExited
+
+    private void lbAtrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbAtrasMouseClicked
+        frmMenu menu = new frmMenu();
+        menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lbAtrasMouseClicked
+
+    private void lbAtrasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbAtrasMouseEntered
+        jpAtras.setBackground(new Color(0xFFD369));
+        lbAtras.setForeground(new Color(0x100F0F));
+    }//GEN-LAST:event_lbAtrasMouseEntered
+
+    private void lbAtrasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbAtrasMouseExited
+        jpAtras.setBackground(new Color(0x100F0F));
+        lbAtras.setForeground(new Color(0xF1F1F1));
+    }//GEN-LAST:event_lbAtrasMouseExited
+
+    private void jpBarraSuperiorMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpBarraSuperiorMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_jpBarraSuperiorMouseDragged
+
+    private void jpBarraSuperiorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpBarraSuperiorMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_jpBarraSuperiorMousePressed
+
+    private void btnBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarMouseClicked
+        btnBuscar.setBackground(new Color(0x2b628c));
+    }//GEN-LAST:event_btnBuscarMouseClicked
+
+    private void btnBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarMouseEntered
+        btnBuscar.setBackground(new Color(0x2b628c));
+    }//GEN-LAST:event_btnBuscarMouseEntered
+
+    private void btnBuscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarMouseExited
+        btnBuscar.setBackground(new Color(0x22577E));
+    }//GEN-LAST:event_btnBuscarMouseExited
+
+    private void btnBuscarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarMousePressed
+        btnBuscar.setBackground(new Color(0x2b5574));
+    }//GEN-LAST:event_btnBuscarMousePressed
+
+    private void btnBuscar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscar2MouseClicked
+        btnBuscar2.setBackground(new Color(0x2b628c));
+    }//GEN-LAST:event_btnBuscar2MouseClicked
+
+    private void btnBuscar2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscar2MouseEntered
+        btnBuscar2.setBackground(new Color(0x2b628c));
+    }//GEN-LAST:event_btnBuscar2MouseEntered
+
+    private void btnBuscar2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscar2MouseExited
+        btnBuscar2.setBackground(new Color(0x22577E));
+    }//GEN-LAST:event_btnBuscar2MouseExited
+
+    private void btnBuscar2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscar2MousePressed
+        btnBuscar2.setBackground(new Color(0x2b5574));
+    }//GEN-LAST:event_btnBuscar2MousePressed
+
+    private void btnAgregarVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarVentaMouseClicked
+        btnAgregarVenta.setBackground(new Color(0x2b628c));
+    }//GEN-LAST:event_btnAgregarVentaMouseClicked
+
+    private void btnAgregarVentaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarVentaMouseEntered
+        btnAgregarVenta.setBackground(new Color(0x2b628c));
+    }//GEN-LAST:event_btnAgregarVentaMouseEntered
+
+    private void btnAgregarVentaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarVentaMouseExited
+        btnAgregarVenta.setBackground(new Color(0x22577E));
+    }//GEN-LAST:event_btnAgregarVentaMouseExited
+
+    private void btnAgregarVentaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarVentaMousePressed
+        btnAgregarVenta.setBackground(new Color(0x2b5574));
+    }//GEN-LAST:event_btnAgregarVentaMousePressed
+
+    private void btnCancelarVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarVentaMouseClicked
+        frmMenu menu = new frmMenu();
+        menu.setVisible(true);
+        this.dispose();
+        btnCancelarVenta.setBackground(new Color(0xf75c5c));
+    }//GEN-LAST:event_btnCancelarVentaMouseClicked
+
+    private void btnCancelarVentaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarVentaMouseEntered
+        btnCancelarVenta.setBackground(new Color(0xf75c5c));
+    }//GEN-LAST:event_btnCancelarVentaMouseEntered
+
+    private void btnCancelarVentaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarVentaMouseExited
+        btnCancelarVenta.setBackground(new Color(0xF05454));
+    }//GEN-LAST:event_btnCancelarVentaMouseExited
+
+    private void btnCancelarVentaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarVentaMousePressed
+        btnCancelarVenta.setBackground(new Color(0xe65353));
+    }//GEN-LAST:event_btnCancelarVentaMousePressed
+
+    private void btnGenerarVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGenerarVentaMouseClicked
+        btnGenerarVenta.setBackground(new Color(0x2b628c));
+    }//GEN-LAST:event_btnGenerarVentaMouseClicked
+
+    private void btnGenerarVentaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGenerarVentaMouseEntered
+        btnGenerarVenta.setBackground(new Color(0x2b628c));
+    }//GEN-LAST:event_btnGenerarVentaMouseEntered
+
+    private void btnGenerarVentaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGenerarVentaMouseExited
+        btnGenerarVenta.setBackground(new Color(0x22577E));
+    }//GEN-LAST:event_btnGenerarVentaMouseExited
+
+    private void btnGenerarVentaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGenerarVentaMousePressed
+        btnGenerarVenta.setBackground(new Color(0x2b5574));
+    }//GEN-LAST:event_btnGenerarVentaMousePressed
+
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Windows".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(frmVentasAgregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(frmVentasAgregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(frmVentasAgregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(frmVentasAgregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new frmVentasAgregar().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel body;
+    private javax.swing.JPanel btnAgregarVenta;
+    private javax.swing.JPanel btnBuscar;
+    private javax.swing.JPanel btnBuscar2;
+    private javax.swing.JPanel btnCancelarVenta;
+    private javax.swing.JPanel btnGenerarVenta;
+    private javax.swing.JPanel header;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel jpAgregarCompra;
+    private javax.swing.JPanel jpAtras;
+    private javax.swing.JPanel jpBarraSuperior;
+    private javax.swing.JPanel jpExit;
+    private javax.swing.JPanel jpMinimizar;
+    private javax.swing.JPanel jpTabla;
+    private javax.swing.JLabel lbAtras;
+    private javax.swing.JLabel lbCodigo;
+    private javax.swing.JLabel lbExit;
+    private javax.swing.JLabel lbFecha;
+    private javax.swing.JLabel lbLogo;
+    private javax.swing.JLabel lbMinimizar;
+    private javax.swing.JLabel lbTittle;
+    private javax.swing.JPopupMenu menuTabla;
+    private javax.swing.JPanel separador;
+    private javax.swing.JPanel separador1;
+    private javax.swing.JPanel separador2;
+    private javax.swing.JPanel separador3;
+    private javax.swing.JPanel separador4;
+    private javax.swing.JPanel separador5;
+    private javax.swing.JPanel separador6;
+    public static javax.swing.JTable tbParaVender;
+    private javax.swing.JTextField txtCantidad;
+    private javax.swing.JTextField txtCliente;
+    private javax.swing.JTextField txtCodigoGenerado;
+    private javax.swing.JTextField txtCodigoProducto;
+    private javax.swing.JTextField txtFechaGenerada;
+    private javax.swing.JTextField txtIdCliente;
+    private javax.swing.JTextField txtPrecioVenta;
+    private javax.swing.JTextField txtProducto;
+    private javax.swing.JTextField txtStock;
+    private javax.swing.JTextField txtTotal;
+    // End of variables declaration//GEN-END:variables
+}
