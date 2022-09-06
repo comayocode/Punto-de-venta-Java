@@ -212,6 +212,9 @@ public class frmComprasMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCerrarMousePressed
 
     private void btnCargarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCargarMouseClicked
+        frmComprasBuscar buscar = new frmComprasBuscar();
+        buscar.setVisible(true);
+        this.dispose();
         btnCargar.setBackground(new Color(0x2b628c));
     }//GEN-LAST:event_btnCargarMouseClicked
     private void btnCargarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCargarMouseEntered
