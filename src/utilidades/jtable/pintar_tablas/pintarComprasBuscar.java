@@ -7,7 +7,7 @@ import javax.swing.table.JTableHeader;
 import vista.frmComprasBuscar;
 import static vista.frmComprasBuscar.tbBuscarCompras;
 
-public class pintarCompasBuscar {
+public class pintarComprasBuscar {
     public static void pintar(){
         try {
             //Crear modelo de la tabla. POR EL MOMENTO NO HACE NINGUNA FUNCION
