@@ -1,22 +1,89 @@
 package vista;
 
 import java.awt.Color;
-import java.awt.Insets;
-import javax.swing.JTextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import utilidades.jtable.pintar_tablas.pintarComprasAgregar;
 
 public class frmComprasAgregar extends javax.swing.JFrame {
 
     int xMouse, yMouse;
-    
+
     public frmComprasAgregar() {
         initComponents();
         this.setLocationRelativeTo(null);
+        pintarComprasAgregar.pintar();
+        pintarComprasAgregar.editarHeaderJtable();
+        inicarpopUpMenuTabla();
+
     }
+
+    // ----- INICIO CÓDIGO POPUPMENU JTABLE -----
+    //Método para editar estilo y acciones del Joption.showConfirmDialog
+    public void confirmarEliminar() {
+
+        // --- ESTILOS ---
+        //Añadir las opciones a un arreglo
+        Object[] botones = {"Confirmar", "Cancelar"};
+
+        //Guardar la selección de opción en una variable
+        int opcion = JOptionPane.showOptionDialog(null, //Centrar ventana
+                "¿Seguro que quiere eliminar de la lista de Compra?", //Mensaje/Pregunta
+                "Eliminar Compra", //Titulo de la ventana
+                JOptionPane.YES_NO_OPTION, //Opción Confirmar
+                JOptionPane.QUESTION_MESSAGE, //Opción Cancelar
+                null, //No usar icono
+                botones, //Titulo de los botones
+                botones[0]); //Botones
+
+        // --- ACCIONES ---
+        //Validar la opción escogida
+        if (opcion == JOptionPane.YES_OPTION) { //Si la opción es "Confirmar"...
+            //Codigo a ejecutar aquí
+            JOptionPane.showMessageDialog(null, "Eliminado", "Compra eliminada", JOptionPane.NO_OPTION);
+        } else if (opcion == JOptionPane.YES_NO_OPTION) { //Si la opción es "Cancelar"
+            //No hacer nada
+            setDefaultCloseOperation(frmMenu.DO_NOTHING_ON_CLOSE);
+        }
+    }
+
+    //Opciones de menu al dar clic derecho en la tabla
+    public void inicarpopUpMenuTabla() {
+        JMenuItem eliminar = new JMenuItem("Eliminar", getIcon("/img/clientes/delete.png", 20, 20));
+
+        //Añadir las opciones al popupmenu
+        menuTabla.add(eliminar);
+
+        tbParaComprar.setComponentPopupMenu(menuTabla); //Le pasamos el popupMenu a la tabla
+
+        // ----- AÑADIR LAS ACCIONES PARA CADA OPCION -----
+        //Acción de la opción "Eliminar"
+        eliminar.addActionListener(new ActionListener() { //Si la opción escogida es "Eliminar"
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //Codigo a ejecutar
+                confirmarEliminar();
+            }
+        });
+    }
+
+    //Método para obtener icono
+    public Icon getIcon(String ruta, int width, int height) {
+        Icon miicono = new ImageIcon(new ImageIcon(getClass().getResource(ruta)).getImage().getScaledInstance(width, height, 0));
+        return miicono;
+
+    }
+    // ----- FIN CÓDIGO POPUPMENU JTABLE -----
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        menuTabla = new javax.swing.JPopupMenu();
         jPanel1 = new javax.swing.JPanel();
         jpBarraSuperior = new javax.swing.JPanel();
         jpExit = new javax.swing.JPanel();
@@ -130,7 +197,7 @@ public class frmComprasAgregar extends javax.swing.JFrame {
                 .addComponent(lbExit, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jpBarraSuperior.add(jpExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(594, 0, -1, 32));
+        jpBarraSuperior.add(jpExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, -1, 32));
 
         jpMinimizar.setBackground(new java.awt.Color(16, 15, 15));
         jpMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -170,7 +237,7 @@ public class frmComprasAgregar extends javax.swing.JFrame {
                 .addComponent(lbMinimizar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jpBarraSuperior.add(jpMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(544, 0, 50, 32));
+        jpBarraSuperior.add(jpMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 50, 32));
 
         jpAtras.setBackground(new java.awt.Color(16, 15, 15));
         jpAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -210,14 +277,14 @@ public class frmComprasAgregar extends javax.swing.JFrame {
                 .addComponent(lbAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jpBarraSuperior.add(jpAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 0, 50, 32));
+        jpBarraSuperior.add(jpAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 50, 32));
 
         jLabel1.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(241, 241, 241));
         jLabel1.setText(".: Compras :.");
         jpBarraSuperior.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 5, 150, 23));
 
-        jPanel1.add(jpBarraSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 644, 32));
+        jPanel1.add(jpBarraSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 32));
 
         header.setBackground(new java.awt.Color(34, 87, 126));
         header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -229,7 +296,7 @@ public class frmComprasAgregar extends javax.swing.JFrame {
         lbTittle.setFont(new java.awt.Font("Roboto Medium", 0, 30)); // NOI18N
         lbTittle.setForeground(new java.awt.Color(241, 241, 241));
         lbTittle.setText("Nueva Compra");
-        header.add(lbTittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 32, -1, -1));
+        header.add(lbTittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 32, -1, -1));
 
         txtFechaGenerada.setEditable(false);
         txtFechaGenerada.setBackground(new java.awt.Color(16, 15, 15));
@@ -238,7 +305,7 @@ public class frmComprasAgregar extends javax.swing.JFrame {
         txtFechaGenerada.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtFechaGenerada.setText("16/08/2022");
         txtFechaGenerada.setBorder(null);
-        header.add(txtFechaGenerada, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 26, 110, 20));
+        header.add(txtFechaGenerada, new org.netbeans.lib.awtextra.AbsoluteConstraints(541, 23, 110, 25));
 
         txtCodigoGenerado.setEditable(false);
         txtCodigoGenerado.setBackground(new java.awt.Color(16, 15, 15));
@@ -247,19 +314,19 @@ public class frmComprasAgregar extends javax.swing.JFrame {
         txtCodigoGenerado.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtCodigoGenerado.setText("Autogenerado");
         txtCodigoGenerado.setBorder(null);
-        header.add(txtCodigoGenerado, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 54, 110, 20));
+        header.add(txtCodigoGenerado, new org.netbeans.lib.awtextra.AbsoluteConstraints(541, 53, 110, 25));
 
         lbFecha.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         lbFecha.setForeground(new java.awt.Color(241, 241, 241));
         lbFecha.setText("Fecha");
-        header.add(lbFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(471, 29, -1, -1));
+        header.add(lbFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 29, -1, -1));
 
         lbCodigo.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         lbCodigo.setForeground(new java.awt.Color(241, 241, 241));
         lbCodigo.setText("Código");
-        header.add(lbCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(467, 57, -1, -1));
+        header.add(lbCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 57, -1, -1));
 
-        jPanel1.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 32, 644, 100));
+        jPanel1.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 32, 670, 100));
 
         body.setBackground(new java.awt.Color(241, 241, 241));
         body.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -271,13 +338,13 @@ public class frmComprasAgregar extends javax.swing.JFrame {
         jLabel2.setBackground(new java.awt.Color(16, 15, 15));
         jLabel2.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(16, 15, 15));
-        jLabel2.setText("Nit Proveedor");
+        jLabel2.setText("Nit Proveedor:");
         jpAgregarCompra.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 21, -1, -1));
 
         txtNitProveedor.setBackground(new java.awt.Color(217, 217, 217));
         txtNitProveedor.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         txtNitProveedor.setBorder(null);
-        jpAgregarCompra.add(txtNitProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 20, 111, 22));
+        jpAgregarCompra.add(txtNitProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 20, 111, 25));
 
         separador.setBackground(new java.awt.Color(16, 15, 15));
 
@@ -292,7 +359,7 @@ public class frmComprasAgregar extends javax.swing.JFrame {
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jpAgregarCompra.add(separador, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 42, 111, 2));
+        jpAgregarCompra.add(separador, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 45, 111, 2));
 
         btnBuscar.setBackground(new java.awt.Color(34, 87, 126));
         btnBuscar.setForeground(new java.awt.Color(241, 241, 241));
@@ -314,21 +381,21 @@ public class frmComprasAgregar extends javax.swing.JFrame {
         btnBuscar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/compras/buscar18.png"))); // NOI18N
-        btnBuscar.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 3, 18, 18));
+        btnBuscar.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 5, 18, 18));
 
-        jpAgregarCompra.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 20, 40, 24));
+        jpAgregarCompra.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 20, 40, 27));
 
         jLabel3.setBackground(new java.awt.Color(16, 15, 15));
         jLabel3.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(16, 15, 15));
-        jLabel3.setText("Cod. Producto");
-        jpAgregarCompra.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 53, -1, -1));
+        jLabel3.setText("Cod. Producto:");
+        jpAgregarCompra.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 56, -1, -1));
 
         txtCodigoProducto.setBackground(new java.awt.Color(217, 217, 217));
         txtCodigoProducto.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         txtCodigoProducto.setBorder(null);
         txtCodigoProducto.setOpaque(true);
-        jpAgregarCompra.add(txtCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 52, 111, 22));
+        jpAgregarCompra.add(txtCodigoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 55, 111, 25));
 
         btnBuscar2.setBackground(new java.awt.Color(34, 87, 126));
         btnBuscar2.setForeground(new java.awt.Color(241, 241, 241));
@@ -350,9 +417,9 @@ public class frmComprasAgregar extends javax.swing.JFrame {
         btnBuscar2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/compras/buscar18.png"))); // NOI18N
-        btnBuscar2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 3, 18, 18));
+        btnBuscar2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 5, 18, 18));
 
-        jpAgregarCompra.add(btnBuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 52, 40, 24));
+        jpAgregarCompra.add(btnBuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 55, 40, 27));
 
         separador1.setBackground(new java.awt.Color(16, 15, 15));
 
@@ -367,13 +434,13 @@ public class frmComprasAgregar extends javax.swing.JFrame {
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jpAgregarCompra.add(separador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 74, 111, 2));
+        jpAgregarCompra.add(separador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 80, 111, 2));
 
         txtCantidad.setBackground(new java.awt.Color(217, 217, 217));
         txtCantidad.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         txtCantidad.setBorder(null);
         txtCantidad.setOpaque(true);
-        jpAgregarCompra.add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 84, 111, 22));
+        jpAgregarCompra.add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 90, 111, 25));
 
         separador2.setBackground(new java.awt.Color(16, 15, 15));
 
@@ -388,19 +455,19 @@ public class frmComprasAgregar extends javax.swing.JFrame {
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jpAgregarCompra.add(separador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 106, 111, 2));
+        jpAgregarCompra.add(separador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 115, 111, 2));
 
         jLabel4.setBackground(new java.awt.Color(16, 15, 15));
         jLabel4.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(16, 15, 15));
-        jLabel4.setText("Cantidad");
-        jpAgregarCompra.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 85, -1, -1));
+        jLabel4.setText("Cantidad:");
+        jpAgregarCompra.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 91, -1, -1));
 
         txtPrecioVenta.setBackground(new java.awt.Color(217, 217, 217));
         txtPrecioVenta.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         txtPrecioVenta.setBorder(null);
         txtPrecioVenta.setOpaque(true);
-        jpAgregarCompra.add(txtPrecioVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 116, 111, 22));
+        jpAgregarCompra.add(txtPrecioVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 125, 111, 25));
 
         separador3.setBackground(new java.awt.Color(16, 15, 15));
 
@@ -415,19 +482,19 @@ public class frmComprasAgregar extends javax.swing.JFrame {
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jpAgregarCompra.add(separador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 138, 111, 2));
+        jpAgregarCompra.add(separador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 150, 111, 2));
 
         jLabel5.setBackground(new java.awt.Color(16, 15, 15));
         jLabel5.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(16, 15, 15));
-        jLabel5.setText("Precio Venta");
-        jpAgregarCompra.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 117, -1, -1));
+        jLabel5.setText("Precio Venta:");
+        jpAgregarCompra.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 126, -1, -1));
 
         txtProveedor.setBackground(new java.awt.Color(217, 217, 217));
         txtProveedor.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         txtProveedor.setBorder(null);
         txtProveedor.setOpaque(true);
-        jpAgregarCompra.add(txtProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(432, 20, 158, 22));
+        jpAgregarCompra.add(txtProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(457, 20, 158, 25));
 
         separador4.setBackground(new java.awt.Color(16, 15, 15));
 
@@ -442,19 +509,19 @@ public class frmComprasAgregar extends javax.swing.JFrame {
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jpAgregarCompra.add(separador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(432, 42, 158, 2));
+        jpAgregarCompra.add(separador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(457, 45, 158, 2));
 
         jLabel6.setBackground(new java.awt.Color(16, 15, 15));
         jLabel6.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(16, 15, 15));
-        jLabel6.setText("Proveedor");
-        jpAgregarCompra.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 21, -1, -1));
+        jLabel6.setText("Proveedor:");
+        jpAgregarCompra.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 21, -1, -1));
 
         txtProducto.setBackground(new java.awt.Color(217, 217, 217));
         txtProducto.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         txtProducto.setBorder(null);
         txtProducto.setOpaque(true);
-        jpAgregarCompra.add(txtProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(432, 52, 158, 22));
+        jpAgregarCompra.add(txtProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(457, 55, 158, 25));
 
         separador5.setBackground(new java.awt.Color(16, 15, 15));
 
@@ -469,19 +536,19 @@ public class frmComprasAgregar extends javax.swing.JFrame {
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jpAgregarCompra.add(separador5, new org.netbeans.lib.awtextra.AbsoluteConstraints(432, 74, 158, 2));
+        jpAgregarCompra.add(separador5, new org.netbeans.lib.awtextra.AbsoluteConstraints(457, 80, 158, 2));
 
         jLabel7.setBackground(new java.awt.Color(16, 15, 15));
         jLabel7.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(16, 15, 15));
-        jLabel7.setText("Producto");
-        jpAgregarCompra.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 53, -1, -1));
+        jLabel7.setText("Producto:");
+        jpAgregarCompra.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 56, -1, -1));
 
         txtPrecioCompra.setBackground(new java.awt.Color(217, 217, 217));
         txtPrecioCompra.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
         txtPrecioCompra.setBorder(null);
         txtPrecioCompra.setOpaque(true);
-        jpAgregarCompra.add(txtPrecioCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(432, 84, 158, 22));
+        jpAgregarCompra.add(txtPrecioCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(457, 90, 158, 25));
 
         separador6.setBackground(new java.awt.Color(16, 15, 15));
 
@@ -496,13 +563,13 @@ public class frmComprasAgregar extends javax.swing.JFrame {
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jpAgregarCompra.add(separador6, new org.netbeans.lib.awtextra.AbsoluteConstraints(432, 106, 158, 2));
+        jpAgregarCompra.add(separador6, new org.netbeans.lib.awtextra.AbsoluteConstraints(457, 115, 158, 2));
 
         jLabel8.setBackground(new java.awt.Color(16, 15, 15));
         jLabel8.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(16, 15, 15));
-        jLabel8.setText("Precio Compra");
-        jpAgregarCompra.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 85, -1, -1));
+        jLabel8.setText("Precio Compra:");
+        jpAgregarCompra.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 91, -1, -1));
 
         btnAgregarCompra.setBackground(new java.awt.Color(34, 87, 126));
         btnAgregarCompra.setForeground(new java.awt.Color(241, 241, 241));
@@ -526,14 +593,14 @@ public class frmComprasAgregar extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(241, 241, 241));
         jLabel10.setText("Agregar Compra");
-        btnAgregarCompra.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 4, -1, -1));
+        btnAgregarCompra.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 5, -1, -1));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/compras/agregar18.png"))); // NOI18N
-        btnAgregarCompra.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 3, 18, 18));
+        btnAgregarCompra.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 5, 18, 18));
 
-        jpAgregarCompra.add(btnAgregarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(432, 116, 158, 24));
+        jpAgregarCompra.add(btnAgregarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(457, 125, 158, 27));
 
-        body.add(jpAgregarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 14, 610, 158));
+        body.add(jpAgregarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 14, 636, 170));
 
         btnCancelarCompra.setBackground(new java.awt.Color(240, 84, 84));
         btnCancelarCompra.setForeground(new java.awt.Color(241, 241, 241));
@@ -557,12 +624,12 @@ public class frmComprasAgregar extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(16, 15, 15));
         jLabel13.setText("Cancelar Compra");
-        btnCancelarCompra.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 5, -1, -1));
+        btnCancelarCompra.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 6, -1, -1));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/compras/cancelarCompra.png"))); // NOI18N
-        btnCancelarCompra.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 3, 20, 20));
+        btnCancelarCompra.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 4, 20, 20));
 
-        body.add(btnCancelarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 419, 158, 25));
+        body.add(btnCancelarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 442, 158, 27));
 
         btnPagarCompras.setBackground(new java.awt.Color(34, 87, 126));
         btnPagarCompras.setForeground(new java.awt.Color(241, 241, 241));
@@ -586,12 +653,12 @@ public class frmComprasAgregar extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(241, 241, 241));
         jLabel15.setText("Pagar Compras");
-        btnPagarCompras.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 5, -1, -1));
+        btnPagarCompras.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 6, -1, -1));
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/compras/PagarCompras.png"))); // NOI18N
-        btnPagarCompras.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 3, 20, 20));
+        btnPagarCompras.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 4, 20, 20));
 
-        body.add(btnPagarCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 419, 158, 25));
+        body.add(btnPagarCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 442, 158, 27));
 
         jpTabla.setBackground(new java.awt.Color(241, 241, 241));
         jpTabla.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(34, 87, 126), 2));
@@ -599,20 +666,30 @@ public class frmComprasAgregar extends javax.swing.JFrame {
 
         tbParaComprar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {"Pollo", "45", "1200", "120000"},
+                {"Carne", "23", "2000", "120000"},
+                {"Cerdo", "12", "1350", "120000"},
+                {"Pescado", "33", "1700", "120000"}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Producto", "Cantidad", "Precio Compra", "Sub Total"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tbParaComprar.setRowHeight(25);
+        tbParaComprar.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tbParaComprar);
 
-        jpTabla.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 590, 197));
+        jpTabla.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 10, 590, 197));
 
-        body.add(jpTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 192, 610, 217));
+        body.add(jpTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 205, 636, 217));
 
         jTextField1.setBackground(new java.awt.Color(16, 15, 15));
         jTextField1.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
@@ -620,14 +697,14 @@ public class frmComprasAgregar extends javax.swing.JFrame {
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("$ 0.0");
         jTextField1.setBorder(null);
-        body.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 419, 110, 25));
+        body.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 442, 110, 27));
 
         jLabel17.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(16, 15, 15));
         jLabel17.setText("TOTAL");
-        body.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 421, -1, -1));
+        body.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 444, -1, -1));
 
-        jPanel1.add(body, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 132, 644, 460));
+        jPanel1.add(body, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 132, 670, 481));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -711,7 +788,7 @@ public class frmComprasAgregar extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarMouseExited
 
     private void btnBuscarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarMousePressed
-       btnBuscar.setBackground(new Color(0x2b5574));
+        btnBuscar.setBackground(new Color(0x2b5574));
     }//GEN-LAST:event_btnBuscarMousePressed
 
     private void btnBuscar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscar2MouseClicked
@@ -747,19 +824,22 @@ public class frmComprasAgregar extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarCompraMousePressed
 
     private void btnCancelarCompraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarCompraMouseClicked
-        // TODO add your handling code here:
+        frmMenu menu = new frmMenu();
+        menu.setVisible(true);
+        this.dispose();
+        btnCancelarCompra.setBackground(new Color(0xf75c5c));
     }//GEN-LAST:event_btnCancelarCompraMouseClicked
 
     private void btnCancelarCompraMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarCompraMouseEntered
-        // TODO add your handling code here:
+        btnCancelarCompra.setBackground(new Color(0xf75c5c));
     }//GEN-LAST:event_btnCancelarCompraMouseEntered
 
     private void btnCancelarCompraMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarCompraMouseExited
-        // TODO add your handling code here:
+        btnCancelarCompra.setBackground(new Color(0xF05454));
     }//GEN-LAST:event_btnCancelarCompraMouseExited
 
     private void btnCancelarCompraMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarCompraMousePressed
-        // TODO add your handling code here:
+        btnCancelarCompra.setBackground(new Color(0xe65353));
     }//GEN-LAST:event_btnCancelarCompraMousePressed
 
     private void btnPagarComprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPagarComprasMouseClicked
@@ -852,6 +932,7 @@ public class frmComprasAgregar extends javax.swing.JFrame {
     private javax.swing.JLabel lbLogo;
     private javax.swing.JLabel lbMinimizar;
     private javax.swing.JLabel lbTittle;
+    private javax.swing.JPopupMenu menuTabla;
     private javax.swing.JPanel separador;
     private javax.swing.JPanel separador1;
     private javax.swing.JPanel separador2;
@@ -859,7 +940,7 @@ public class frmComprasAgregar extends javax.swing.JFrame {
     private javax.swing.JPanel separador4;
     private javax.swing.JPanel separador5;
     private javax.swing.JPanel separador6;
-    private javax.swing.JTable tbParaComprar;
+    public static javax.swing.JTable tbParaComprar;
     private javax.swing.JTextField txtCantidad;
     private javax.swing.JTextField txtCodigoGenerado;
     private javax.swing.JTextField txtCodigoProducto;
