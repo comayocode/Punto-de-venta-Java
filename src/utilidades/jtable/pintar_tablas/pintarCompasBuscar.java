@@ -4,10 +4,10 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
-import vista.frmComprasAgregar;
-import static vista.frmComprasAgregar.tbParaComprar;
+import vista.frmComprasBuscar;
+import static vista.frmComprasBuscar.tbBuscarCompras;
 
-public class pintarComprasAgregar {
+public class pintarCompasBuscar {
     public static void pintar(){
         try {
             //Crear modelo de la tabla. POR EL MOMENTO NO HACE NINGUNA FUNCION
@@ -24,13 +24,13 @@ public class pintarComprasAgregar {
             colorIntercaladoCeldasJTable c = new colorIntercaladoCeldasJTable();
         
             //Se obtiene la tabla y se establece el formato para cada tipo de dato
-            tbParaComprar.setDefaultRenderer(Double.class, c); 
-            tbParaComprar.setDefaultRenderer(String.class, c); 
-            tbParaComprar.setDefaultRenderer(Integer.class, c);
+            tbBuscarCompras.setDefaultRenderer(Double.class, c); 
+            tbBuscarCompras.setDefaultRenderer(String.class, c); 
+            tbBuscarCompras.setDefaultRenderer(Integer.class, c);
                        
             //Colorear celdas
-            for (int i = 0; i<frmComprasAgregar.tbParaComprar.getColumnCount(); i++){
-                tbParaComprar.getColumnModel().getColumn(i).setCellRenderer(c);
+            for (int i = 0; i<frmComprasBuscar.tbBuscarCompras.getColumnCount(); i++){
+                tbBuscarCompras.getColumnModel().getColumn(i).setCellRenderer(c);
             }
             
         } catch (Exception e) {
@@ -41,10 +41,10 @@ public class pintarComprasAgregar {
     
     //Método para editar el Header del jtable
     public static void editarHeaderJtable(){
-        JTableHeader header = tbParaComprar.getTableHeader();
+        JTableHeader header = tbBuscarCompras.getTableHeader();
         header.setFont(new Font("Roboto", Font.BOLD, 16));
         header.setForeground(new Color(0xF1F1F1));
         header.setOpaque(false);
-        tbParaComprar.getTableHeader().setBackground(new Color(0x100F0F));
+        tbBuscarCompras.getTableHeader().setBackground(new Color(0x100F0F));
     }
 }
