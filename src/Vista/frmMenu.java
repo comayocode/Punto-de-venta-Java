@@ -1,7 +1,6 @@
 package vista;
 
 import java.awt.Color;
-import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 
 public class frmMenu extends javax.swing.JFrame {
@@ -14,7 +13,7 @@ public class frmMenu extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         setTitle("Menú");
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -495,6 +494,9 @@ public class frmMenu extends javax.swing.JFrame {
     
 // ---- EVENTOS BOTONES HELP Y CONFIGURACION----
     private void lbHelpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbHelpMouseClicked
+        frmAyuda ayuda = new frmAyuda();
+        ayuda.setVisible(true);
+        this.dispose();
         btnHelp.setBackground(new Color(0x4c708a));
     }//GEN-LAST:event_lbHelpMouseClicked
     private void lbHelpMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbHelpMouseEntered
@@ -508,6 +510,9 @@ public class frmMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_lbHelpMousePressed
 
     private void lbConfigMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbConfigMouseClicked
+        frmConfiguracion config = new frmConfiguracion();
+        config.setVisible(true);
+        this.dispose();
         btnConfig.setBackground(new Color(0x4c708a));
     }//GEN-LAST:event_lbConfigMouseClicked
     private void lbConfigMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbConfigMouseEntered
@@ -571,6 +576,9 @@ public class frmMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClientesMousePressed
 
     private void btnVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVentasMouseClicked
+        frmVentasMenu menu = new frmVentasMenu();
+        menu.setVisible(true);
+        this.dispose();
         btnVentas.setBackground(new Color(0x2b628c));
     }//GEN-LAST:event_btnVentasMouseClicked
     private void btnVentasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVentasMouseEntered
