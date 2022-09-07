@@ -1,14 +1,15 @@
 package vista;
 
+import controlador.ProductoControlador;
 import java.awt.Color;
+import modelo.dao.ProductoDAO;
+import modelo.vo.ProductoVO;
 
 public class frmProductosAgregar extends javax.swing.JFrame {
 
     public frmProductosAgregar() {
         initComponents();
-        
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -208,7 +209,7 @@ public class frmProductosAgregar extends javax.swing.JFrame {
 
     private void txtProductoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtProductoMousePressed
         //Validar que el texto del campo sea igual a "Ingrese el Producto"
-        if(txtProducto.getText().equals("Ingrese el Producto")){
+        if (txtProducto.getText().equals("Ingrese el Producto")) {
             txtProducto.setText(""); //Vaciar el campo
             txtProducto.setForeground(new Color(0x100F0F)); //Cambiar el color de letra
         }
@@ -229,14 +230,14 @@ public class frmProductosAgregar extends javax.swing.JFrame {
     }//GEN-LAST:event_lbExitMouseExited
 
     // Método para llenar el campo txtProducto
-    public void llenarCampoVacio(){
+    public void llenarCampoVacio() {
         //Validar que el campo usuario esté vacío(is.Empty())
-        if(txtProducto.getText().isEmpty()){
+        if (txtProducto.getText().isEmpty()) {
             txtProducto.setText("Ingrese el Producto");
             txtProducto.setForeground(new Color(0x666666));
         }
     }
-    
+
     private void txtCodigoProductoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCodigoProductoMousePressed
         //Llamado del método
         llenarCampoVacio();
@@ -252,7 +253,7 @@ public class frmProductosAgregar extends javax.swing.JFrame {
         btnGuardar.setBackground(new Color(0x2b628c));
     }//GEN-LAST:event_btnGuardarMouseClicked
     private void btnGuardarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarMouseEntered
-        btnGuardar.setBackground(new Color(0x2b628c));        
+        btnGuardar.setBackground(new Color(0x2b628c));
     }//GEN-LAST:event_btnGuardarMouseEntered
     private void btnGuardarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarMouseExited
         btnGuardar.setBackground(new Color(0x22577E));
@@ -286,12 +287,10 @@ public class frmProductosAgregar extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
+        
+
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new frmProductosAgregar().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -28,10 +28,12 @@ public class ProductoControlador implements ActionListener{
     }
     
     //Método para iniciar la vista
+    
     public void iniciar(){
         vista.setLocationRelativeTo(null);
         vista.setTitle("Añadir Productos");
     }
+    
     
     //Eventos que escuchan las acciones de los botones
     @Override

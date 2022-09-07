@@ -1,8 +1,11 @@
 package vista;
 
+import controlador.ProductoControlador;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
+import modelo.dao.ProductoDAO;
+import modelo.vo.ProductoVO;
 
 public class frmLogin extends javax.swing.JFrame {
 
@@ -293,17 +296,7 @@ public class frmLogin extends javax.swing.JFrame {
         btnSalir.setBackground(new Color(0xd15e5e));
     }//GEN-LAST:event_btnSalirMousePressed
     
-    
-    
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Windows".equals(info.getName())) {
@@ -320,14 +313,15 @@ public class frmLogin extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
+        
+        ProductoVO vo = new ProductoVO();
+        ProductoDAO dao = new ProductoDAO();
+        frmProductosAgregar vista = new frmProductosAgregar();
+        ProductoControlador controlador = new ProductoControlador(vo, dao, vista);
+        frmLogin login = new frmLogin();
+        controlador.iniciar();
+        login.setVisible(true);
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new frmLogin().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
