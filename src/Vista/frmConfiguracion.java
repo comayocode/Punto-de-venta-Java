@@ -207,6 +207,8 @@ public class frmConfiguracion extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAñadirMousePressed
 
     private void btnCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseClicked
+        frmMenu menu = new frmMenu();
+        menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnCerrarMouseClicked
 
