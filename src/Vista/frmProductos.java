@@ -574,7 +574,7 @@ public class frmProductos extends javax.swing.JFrame {
     }//GEN-LAST:event_jpBarraSuperiorMousePressed
 
     private void btnAñadirProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAñadirProductoMouseClicked
-        frmProductosAñadir añadir = new frmProductosAñadir();
+        frmProductosAgregar añadir = new frmProductosAgregar();
         añadir.setVisible(true);
         
         btnAñadirProducto.setBackground(new Color(0x2b628c));
