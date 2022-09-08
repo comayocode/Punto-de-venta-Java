@@ -25,7 +25,7 @@ public class frmProductosModificar extends javax.swing.JFrame {
         separador = new javax.swing.JPanel();
         txtProducto = new javax.swing.JTextField();
         separado = new javax.swing.JPanel();
-        btnGuardar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
@@ -139,6 +139,11 @@ public class frmProductosModificar extends javax.swing.JFrame {
                 txtProductoMousePressed(evt);
             }
         });
+        txtProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtProductoActionPerformed(evt);
+            }
+        });
         bg.add(txtProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 228, 190, 20));
 
         separado.setBackground(new java.awt.Color(16, 15, 15));
@@ -156,31 +161,31 @@ public class frmProductosModificar extends javax.swing.JFrame {
 
         bg.add(separado, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 250, 190, 2));
 
-        btnGuardar.setBackground(new java.awt.Color(34, 87, 126));
-        btnGuardar.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        btnGuardar.setForeground(new java.awt.Color(241, 241, 241));
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/productos/Guardar Producto.png"))); // NOI18N
-        btnGuardar.setText("Modificar");
-        btnGuardar.setBorderPainted(false);
-        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnGuardar.setFocusable(false);
-        btnGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnGuardar.setIconTextGap(15);
-        btnGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnModificar.setBackground(new java.awt.Color(34, 87, 126));
+        btnModificar.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
+        btnModificar.setForeground(new java.awt.Color(241, 241, 241));
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/productos/Guardar Producto.png"))); // NOI18N
+        btnModificar.setText("Modificar");
+        btnModificar.setBorderPainted(false);
+        btnModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnModificar.setFocusable(false);
+        btnModificar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnModificar.setIconTextGap(15);
+        btnModificar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnGuardarMouseClicked(evt);
+                btnModificarMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnGuardarMouseEntered(evt);
+                btnModificarMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnGuardarMouseExited(evt);
+                btnModificarMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnGuardarMousePressed(evt);
+                btnModificarMousePressed(evt);
             }
         });
-        bg.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 280, 190, 35));
+        bg.add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 280, 190, 35));
 
         jLabel5.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(16, 15, 15));
@@ -248,18 +253,22 @@ public class frmProductosModificar extends javax.swing.JFrame {
     }//GEN-LAST:event_bgMousePressed
 
     // ---- EVENTOS btnGuardar ----
-    private void btnGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarMouseClicked
-        btnGuardar.setBackground(new Color(0x2b628c));
-    }//GEN-LAST:event_btnGuardarMouseClicked
-    private void btnGuardarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarMouseEntered
-        btnGuardar.setBackground(new Color(0x2b628c));        
-    }//GEN-LAST:event_btnGuardarMouseEntered
-    private void btnGuardarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarMouseExited
-        btnGuardar.setBackground(new Color(0x22577E));
-    }//GEN-LAST:event_btnGuardarMouseExited
-    private void btnGuardarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarMousePressed
-        btnGuardar.setBackground(new Color(0x2b5574));
-    }//GEN-LAST:event_btnGuardarMousePressed
+    private void btnModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModificarMouseClicked
+        btnModificar.setBackground(new Color(0x2b628c));
+    }//GEN-LAST:event_btnModificarMouseClicked
+    private void btnModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModificarMouseEntered
+        btnModificar.setBackground(new Color(0x2b628c));        
+    }//GEN-LAST:event_btnModificarMouseEntered
+    private void btnModificarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModificarMouseExited
+        btnModificar.setBackground(new Color(0x22577E));
+    }//GEN-LAST:event_btnModificarMouseExited
+    private void btnModificarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModificarMousePressed
+        btnModificar.setBackground(new Color(0x2b5574));
+    }//GEN-LAST:event_btnModificarMousePressed
+
+    private void txtProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtProductoActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -298,7 +307,7 @@ public class frmProductosModificar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
-    private javax.swing.JButton btnGuardar;
+    public javax.swing.JButton btnModificar;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
@@ -310,6 +319,6 @@ public class frmProductosModificar extends javax.swing.JFrame {
     private javax.swing.JPanel separador;
     private javax.swing.JPanel topMenu;
     private javax.swing.JTextField txtCodigoProducto;
-    private javax.swing.JTextField txtProducto;
+    public javax.swing.JTextField txtProducto;
     // End of variables declaration//GEN-END:variables
 }

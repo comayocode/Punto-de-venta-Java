@@ -1,6 +1,8 @@
 package vista;
 
 import java.awt.Color;
+import static vista.frmProveedores.tbListaProveedores;
+import modelo.tablas.ProveedorTablaModelo;
 
 public class frmProveedoresModificar extends javax.swing.JFrame {
 
@@ -8,6 +10,9 @@ public class frmProveedoresModificar extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         setTitle("Modificar Productos");
+        
+        ProveedorTablaModelo m = new ProveedorTablaModelo();
+        m.pasarDatosACampoTexto();
     }
     
     // ---- MÉTODOS PARA VACIAR Y LLENAR LOS CAMPOS DE TEXTO ----
@@ -197,6 +202,11 @@ public class frmProveedoresModificar extends javax.swing.JFrame {
         txtCelular.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtCelularMousePressed(evt);
+            }
+        });
+        txtCelular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCelularActionPerformed(evt);
             }
         });
         body.add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 117, 190, 20));
@@ -419,6 +429,11 @@ public class frmProveedoresModificar extends javax.swing.JFrame {
         direccionPresionado();
     }//GEN-LAST:event_txtDireccionMousePressed
 
+    private void txtCelularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCelularActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCelularActionPerformed
+
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -461,7 +476,7 @@ public class frmProveedoresModificar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JPanel body;
-    private javax.swing.JButton btnModificar;
+    public javax.swing.JButton btnModificar;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jpExit;
@@ -472,9 +487,9 @@ public class frmProveedoresModificar extends javax.swing.JFrame {
     private javax.swing.JPanel separado3;
     private javax.swing.JPanel separador;
     private javax.swing.JPanel topMenu;
-    private javax.swing.JTextField txtCelular;
-    private javax.swing.JTextField txtCodigoProveedor;
-    private javax.swing.JTextField txtDireccion;
-    private javax.swing.JTextField txtProveedor;
+    public javax.swing.JTextField txtCelular;
+    public javax.swing.JTextField txtCodigoProveedor;
+    public javax.swing.JTextField txtDireccion;
+    public javax.swing.JTextField txtProveedor;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,13 +6,13 @@ public class frmProveedoresAgregar extends javax.swing.JFrame {
 
     public frmProveedoresAgregar() {
         initComponents();
-        this.setLocationRelativeTo(null);
-        setTitle("Añadir Productos");
+        
     }
     
     // ---- MÉTODOS PARA VACIAR Y LLENAR LOS CAMPOS DE TEXTO ----
     //Método para txtCodigoProveedor
     public void codigoPresionado(){
+        
         if(txtCodigoProveedor.getText().equals("Código")){ //Si el campo tiene "Código"...
             txtCodigoProveedor.setText(""); //Quita el texto
             txtCodigoProveedor.setForeground(new Color(0x100F0F)); //Cambia de color la letra
@@ -32,9 +32,11 @@ public class frmProveedoresAgregar extends javax.swing.JFrame {
             txtDireccion.setText("Dirección"); //Llena el campo con "Dirección"
             txtDireccion.setForeground(new Color(0x666666)); //Cambia el color del texto
         }
+        
     }
     //Método para txtProveedor
     public void proveedorPresionado(){
+        
         if(txtProveedor.getText().equals("Nombre")){
             txtProveedor.setText("");
             txtProveedor.setForeground(new Color(0x100F0F));
@@ -54,9 +56,11 @@ public class frmProveedoresAgregar extends javax.swing.JFrame {
             txtDireccion.setText("Dirección");
             txtDireccion.setForeground(new Color(0x666666));
         }
+        
     }
     //Método para txtCelular
     public void celularPresionado(){
+       
         if(txtCelular.getText().equals("Celular")){
             txtCelular.setText("");
             txtCelular.setForeground(new Color(0x100F0F));
@@ -76,9 +80,11 @@ public class frmProveedoresAgregar extends javax.swing.JFrame {
             txtDireccion.setText("Dirección");
             txtDireccion.setForeground(new Color(0x666666));
         }
+        
     }
     //Método para txtDireccion
     public void direccionPresionado(){
+        
         if(txtDireccion.getText().equals("Dirección")){
             txtDireccion.setText("");
             txtDireccion.setForeground(new Color(0x100F0F));
@@ -199,6 +205,11 @@ public class frmProveedoresAgregar extends javax.swing.JFrame {
                 txtCelularMousePressed(evt);
             }
         });
+        txtCelular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCelularActionPerformed(evt);
+            }
+        });
         body.add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 117, 190, 20));
 
         separado2.setBackground(new java.awt.Color(16, 15, 15));
@@ -224,6 +235,11 @@ public class frmProveedoresAgregar extends javax.swing.JFrame {
         txtProveedor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtProveedorMousePressed(evt);
+            }
+        });
+        txtProveedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtProveedorActionPerformed(evt);
             }
         });
         body.add(txtProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 71, 190, 21));
@@ -419,6 +435,14 @@ public class frmProveedoresAgregar extends javax.swing.JFrame {
         direccionPresionado();
     }//GEN-LAST:event_txtDireccionMousePressed
 
+    private void txtCelularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCelularActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCelularActionPerformed
+
+    private void txtProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtProveedorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtProveedorActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -458,7 +482,7 @@ public class frmProveedoresAgregar extends javax.swing.JFrame {
     private javax.swing.JPanel bg;
     private javax.swing.JPanel body;
     private javax.swing.JPanel btnExit;
-    private javax.swing.JButton btnGuardar;
+    public javax.swing.JButton btnGuardar;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lbExit;
@@ -468,9 +492,9 @@ public class frmProveedoresAgregar extends javax.swing.JFrame {
     private javax.swing.JPanel separado3;
     private javax.swing.JPanel separador;
     private javax.swing.JPanel topMenu;
-    private javax.swing.JTextField txtCelular;
-    private javax.swing.JTextField txtCodigoProveedor;
-    private javax.swing.JTextField txtDireccion;
-    private javax.swing.JTextField txtProveedor;
+    public javax.swing.JTextField txtCelular;
+    public javax.swing.JTextField txtCodigoProveedor;
+    public javax.swing.JTextField txtDireccion;
+    public javax.swing.JTextField txtProveedor;
     // End of variables declaration//GEN-END:variables
 }

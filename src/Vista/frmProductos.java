@@ -1,5 +1,6 @@
 package vista;
 
+import controlador.ProductoControlador;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,6 +8,8 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import modelo.dao.ProductoDAO;
+import modelo.vo.ProductoVO;
 import utilidades.jtable.pintar_tablas.pintarProductos;
 
 public class frmProductos extends javax.swing.JFrame {
@@ -574,8 +577,14 @@ public class frmProductos extends javax.swing.JFrame {
     }//GEN-LAST:event_jpBarraSuperiorMousePressed
 
     private void btnAñadirProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAñadirProductoMouseClicked
-        frmProductosAgregar añadir = new frmProductosAgregar();
-        añadir.setVisible(true);
+        // ----- EJECUTAR EL MODELO, LA VISTA Y EL CONTROLADOR -----
+        ProductoVO vo = new ProductoVO();
+        ProductoDAO dao = new ProductoDAO();
+        frmProductosAgregar vista = new frmProductosAgregar();
+        ProductoControlador controlador = new ProductoControlador(vo, dao, vista);
+        controlador.iniciar();
+        vista.setVisible(true);
+        // ----- FIN DE EJECUCIÓN -----
         
         btnAñadirProducto.setBackground(new Color(0x2b628c));
     }//GEN-LAST:event_btnAñadirProductoMouseClicked

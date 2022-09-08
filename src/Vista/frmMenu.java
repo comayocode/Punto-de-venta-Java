@@ -531,14 +531,8 @@ public class frmMenu extends javax.swing.JFrame {
 // ---- EVENTOS BOTONES SECCIONES ----
     private void btnProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductsMouseClicked
         
-        // ----- EJECUTAR EL MODELO, LA VISTA Y EL CONTROLADOR -----
-        ProductoVO vo = new ProductoVO();
-        ProductoDAO dao = new ProductoDAO();
-        frmProductosAgregar vista = new frmProductosAgregar();
-        ProductoControlador controlador = new ProductoControlador(vo, dao, vista);
-        controlador.iniciar();
-        vista.setVisible(true);
-        // ----- FIN DE EJECUCIÓN -----
+        frmProductos productos = new frmProductos();
+        productos.setVisible(true);
         this.dispose();
         
     }//GEN-LAST:event_btnProductsMouseClicked
