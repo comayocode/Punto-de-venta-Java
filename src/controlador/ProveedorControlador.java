@@ -4,18 +4,17 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import modelo.dao.Conexion;
 import modelo.dao.ProveedorDAO;
 import modelo.vo.ProveedorVO;
 import vista.frmProveedoresAgregar;
-import vista.frmProductosModificar;
+import vista.frmProveedoresModificar;
 
 public class ProveedorControlador implements ActionListener{
 
     private ProveedorVO vo;
     private ProveedorDAO dao;
     private frmProveedoresAgregar vista;
-    private frmProductosModificar modificar;
+    private frmProveedoresModificar modificar;
 
     public ProveedorControlador(ProveedorVO vo, ProveedorDAO dao, frmProveedoresAgregar vista) {
         this.vo = vo;
