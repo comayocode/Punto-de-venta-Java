@@ -70,6 +70,10 @@ public class frmProveedores extends javax.swing.JFrame {
                 //Codigo a ejecutar
                 frmProveedoresModificar modificar = new frmProveedoresModificar();
                 modificar.setVisible(true);
+<<<<<<< HEAD
+=======
+                
+>>>>>>> recover-branch
             }
         });
         
@@ -602,6 +606,18 @@ public class frmProveedores extends javax.swing.JFrame {
         llenarCampoVacio();
     }//GEN-LAST:event_formMousePressed
 
+<<<<<<< HEAD
+=======
+    private void tbListaProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbListaProveedoresMouseClicked
+       
+    }//GEN-LAST:event_tbListaProveedoresMouseClicked
+
+    private void jTextField4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField4MouseClicked
+    }//GEN-LAST:event_jTextField4MouseClicked
+
+    
+    
+>>>>>>> recover-branch
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
