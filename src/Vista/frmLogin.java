@@ -314,7 +314,12 @@ public class frmLogin extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         
+        ProductoVO vo = new ProductoVO();
+        ProductoDAO dao = new ProductoDAO();
+        frmProductosAgregar vista = new frmProductosAgregar();
+        ProductoControlador controlador = new ProductoControlador(vo, dao, vista);
         frmLogin login = new frmLogin();
+        controlador.iniciar();
         login.setVisible(true);
 
     }
