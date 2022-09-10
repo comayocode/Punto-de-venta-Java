@@ -23,7 +23,7 @@ public class ProveedorControlador implements ActionListener{
         this.vista = vista;
 
         this.vista.btnGuardar.addActionListener(this);
-        this.modificar.btnModificar.addActionListener(this);
+        //this.modificar.btnModificar.addActionListener(this);
     }
 
     public void iniciar() {

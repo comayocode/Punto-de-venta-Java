@@ -79,9 +79,6 @@ public class frmProveedores extends javax.swing.JFrame {
                 
                 frmProveedoresModificar modificar = new frmProveedoresModificar();
                 modificar.setVisible(true);
-                System.out.println("Ejecutado dentro de la opcion modificar");
-                proveedor.pasarDatosACampoTexto();
-                System.out.println("Ejecutado despues de pasarDatosACampoTexto");
                 
             }
         });
@@ -617,12 +614,10 @@ public class frmProveedores extends javax.swing.JFrame {
     }//GEN-LAST:event_formMousePressed
 
     private void tbListaProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbListaProveedoresMouseClicked
-        proveedor.pasarDatosACampoTexto();
+       
     }//GEN-LAST:event_tbListaProveedoresMouseClicked
 
     private void jTextField4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField4MouseClicked
-        frmProveedoresModificar mod = new frmProveedoresModificar();
-        mod.setVisible(true);
     }//GEN-LAST:event_jTextField4MouseClicked
 
     
