@@ -1,7 +1,10 @@
 package vista;
 
+import controlador.ProductoControlador;
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import modelo.dao.ProductoDAO;
+import modelo.vo.ProductoVO;
 
 public class frmMenu extends javax.swing.JFrame {
 
@@ -527,10 +530,17 @@ public class frmMenu extends javax.swing.JFrame {
     
 // ---- EVENTOS BOTONES SECCIONES ----
     private void btnProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductsMouseClicked
-        frmProductosMenu menuProductos = new frmProductosMenu();
-        //this.setEnabled(false); //Bloquear Menu al abrir las opciones
-        menuProductos.setVisible(true);
+        
+        // ----- EJECUTAR EL MODELO, LA VISTA Y EL CONTROLADOR -----
+        ProductoVO vo = new ProductoVO();
+        ProductoDAO dao = new ProductoDAO();
+        frmProductosAgregar vista = new frmProductosAgregar();
+        ProductoControlador controlador = new ProductoControlador(vo, dao, vista);
+        controlador.iniciar();
+        vista.setVisible(true);
+        // ----- FIN DE EJECUCIÓN -----
         this.dispose();
+        
     }//GEN-LAST:event_btnProductsMouseClicked
     private void btnProductsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductsMouseEntered
         btnProducts.setBackground(new Color(0x2b628c));
