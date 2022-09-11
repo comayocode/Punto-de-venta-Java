@@ -1,6 +1,7 @@
 package modelo.tablas;
 
 import controlador.ProveedorControlador;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -56,14 +57,26 @@ public class ProveedorTablaModelo {
             Logger.getLogger(ProveedorControlador.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+            
+
     public void pasarDatosACampoTexto(){
+        
         frmProveedoresModificar VistaMod = new frmProveedoresModificar();
         
+        /* Pasa los datos del JTABLE a un campo de texto en 
+        otro JFRAME*/
         VistaMod.txtCodigoProveedor.setText(String.valueOf(tbListaProveedores.getValueAt(tbListaProveedores.getSelectedRow(), 0)));
         VistaMod.txtProveedor.setText(String.valueOf(tbListaProveedores.getValueAt(tbListaProveedores.getSelectedRow(), 1)));
         VistaMod.txtCelular.setText(String.valueOf(tbListaProveedores.getValueAt(tbListaProveedores.getSelectedRow(), 2)));
         VistaMod.txtDireccion.setText(String.valueOf(tbListaProveedores.getValueAt(tbListaProveedores.getSelectedRow(), 3)));
-        System.out.println("Estoy dentro del metodo");
+        
+        VistaMod.txtCodigoProveedor.setForeground(new Color(0x100F0F));
+        VistaMod.txtProveedor.setForeground(new Color(0x100F0F));
+        VistaMod.txtCelular.setForeground(new Color(0x100F0F));
+        VistaMod.txtDireccion.setForeground(new Color(0x100F0F));
+        
+         
+        //Muestra los datos que se pasaron
+        VistaMod.setVisible(true);
     }
 }

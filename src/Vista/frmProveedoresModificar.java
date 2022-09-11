@@ -11,8 +11,8 @@ public class frmProveedoresModificar extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         setTitle("Modificar Productos");
         
-        ProveedorTablaModelo m = new ProveedorTablaModelo();
-        m.pasarDatosACampoTexto();
+        //ProveedorTablaModelo m = new ProveedorTablaModelo();
+        //m.pasarDatosACampoTexto();
     }
     
     // ---- MÉTODOS PARA VACIAR Y LLENAR LOS CAMPOS DE TEXTO ----
@@ -469,6 +469,7 @@ public class frmProveedoresModificar extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new frmProveedoresModificar().setVisible(true);
+                
             }
         });
     }

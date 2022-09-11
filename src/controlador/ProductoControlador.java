@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 import modelo.dao.ProductoDAO;
 import modelo.vo.ProductoVO;
 import vista.frmProductosAgregar;
+import vista.frmProductosModificar;
 
 
 public class ProductoControlador implements ActionListener{
@@ -14,6 +15,7 @@ public class ProductoControlador implements ActionListener{
     private ProductoVO vo;
     private ProductoDAO dao;
     private frmProductosAgregar vista;
+    private frmProductosModificar modificar;
     
     //Constructor que recibe modelo y vista
     public ProductoControlador(ProductoVO vo, ProductoDAO dao, frmProductosAgregar vista){
@@ -24,6 +26,7 @@ public class ProductoControlador implements ActionListener{
         
         //Declarar acciones para los botones de la vista (requiere poner publico el boton)
         this.vista.btnGuardar.addActionListener(this);
+        this.modificar.btnModificar.addActionListener(this);
         
     }
     
@@ -56,6 +59,8 @@ public class ProductoControlador implements ActionListener{
             }
         }
     }
+    
+        
     
     public void limpiar(){
         vista.txtProducto.setText(null);
