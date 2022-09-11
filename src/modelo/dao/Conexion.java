@@ -16,9 +16,13 @@ public class Conexion {
     
         
     public Connection getConexion(){
+        
+        System.out.println("Conectando a la base de datos...");
+        
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(this.URL, this.USER, this.PASSWORD);
+            System.out.println("Conectado");
         } catch (SQLException e) {
             //System.err.println("No se pudo conectar" + e);
             e.printStackTrace();

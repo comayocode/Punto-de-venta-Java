@@ -7,17 +7,11 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import modelo.dao.ProveedorDAO;
-import modelo.vo.ProveedorVO;
 import utilidades.jtable.pintar_tablas.pintarProveedores;
-import controlador.ProveedorControlador;
-import modelo.tablas.ProveedorTablaModelo;
-
 
 public class frmProveedores extends javax.swing.JFrame {
 
     int xMouse, yMouse;
-    ProveedorTablaModelo proveedor = new ProveedorTablaModelo();
     
     public frmProveedores() {
         initComponents();
@@ -26,8 +20,6 @@ public class frmProveedores extends javax.swing.JFrame {
         pintarProveedores.pintar();
         pintarProveedores.editarHeaderJtable();
         inicarpopUpMenuTabla();
-        //mostrarRegistros();
-        mostrarProveedores();
     }
     
     //Método para editar estilo y acciones del Joption.showConfirmDialog
@@ -76,10 +68,12 @@ public class frmProveedores extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Codigo a ejecutar
-                
                 frmProveedoresModificar modificar = new frmProveedoresModificar();
                 modificar.setVisible(true);
+<<<<<<< HEAD
+=======
                 
+>>>>>>> recover-branch
             }
         });
         
@@ -87,7 +81,7 @@ public class frmProveedores extends javax.swing.JFrame {
         eliminar.addActionListener(new ActionListener() { //Si la opción escogida es "Eliminar"
             @Override
             public void actionPerformed(ActionEvent e) {
-                //llamar método de otra clase con la función de eliminar
+                //Codigo a ejecutar
                 confirmarEliminar();
             }
         });
@@ -107,15 +101,6 @@ public class frmProveedores extends javax.swing.JFrame {
             txtBuscar.setForeground(new Color(0x666666));
         }
     }
-    
-    public void mostrarProveedores(){
-        proveedor.mostrarRegistros();
-    }
-    
-    public void pasarDatosACampoModificar(){
-        proveedor.pasarDatosACampoTexto();
-    }
-    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -148,7 +133,6 @@ public class frmProveedores extends javax.swing.JFrame {
         btnBuscar = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         lbHeader1 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -359,22 +343,45 @@ public class frmProveedores extends javax.swing.JFrame {
         tbListaProveedores.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         tbListaProveedores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {"001", "Pollo SAS", "3121234567", "av 100"},
+                {"002", "Pollo SAS", "3121234567", "av 100"},
+                {"003", "Cerdo SAS", "3207654331", "cll 13"},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-
+                "Código", "Proveedor", "Celular", "Dirección"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tbListaProveedores.setMinimumSize(new java.awt.Dimension(105, 530));
         tbListaProveedores.setPreferredSize(new java.awt.Dimension(525, 530));
         tbListaProveedores.setRowHeight(25);
         tbListaProveedores.setShowGrid(true);
         tbListaProveedores.getTableHeader().setReorderingAllowed(false);
-        tbListaProveedores.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbListaProveedoresMouseClicked(evt);
-            }
-        });
         jScrollPane1.setViewportView(tbListaProveedores);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 165, 716, 281));
@@ -466,14 +473,6 @@ public class frmProveedores extends javax.swing.JFrame {
         lbHeader1.setText("Tabla de Proveedores");
         jPanel2.add(lbHeader1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 104, -1, -1));
 
-        jTextField4.setText("jTextField4");
-        jTextField4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTextField4MouseClicked(evt);
-            }
-        });
-        jPanel2.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 30, -1, -1));
-
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 92, 750, 470));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -546,14 +545,8 @@ public class frmProveedores extends javax.swing.JFrame {
     }//GEN-LAST:event_jpBarraSuperiorMousePressed
 
     private void btnAñadirProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAñadirProductoMouseClicked
-        // ----- EJECUTAR EL MODELO, LA VISTA Y EL CONTROLADOR -----
-        ProveedorVO vo = new ProveedorVO();
-        ProveedorDAO dao = new ProveedorDAO();
-        frmProveedoresAgregar vista = new frmProveedoresAgregar();
-        ProveedorControlador controlador = new ProveedorControlador(vo, dao, vista);
-        controlador.iniciar();
-        vista.setVisible(true);
-        // ----- FIN DE EJECUCIÓN -----
+        frmProveedoresAgregar añadir = new frmProveedoresAgregar();
+        añadir.setVisible(true);
 
         btnAñadirProducto.setBackground(new Color(0x2b628c));
     }//GEN-LAST:event_btnAñadirProductoMouseClicked
@@ -613,6 +606,8 @@ public class frmProveedores extends javax.swing.JFrame {
         llenarCampoVacio();
     }//GEN-LAST:event_formMousePressed
 
+<<<<<<< HEAD
+=======
     private void tbListaProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbListaProveedoresMouseClicked
        
     }//GEN-LAST:event_tbListaProveedoresMouseClicked
@@ -622,6 +617,7 @@ public class frmProveedores extends javax.swing.JFrame {
 
     
     
+>>>>>>> recover-branch
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -666,7 +662,6 @@ public class frmProveedores extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JPanel jpAtras;
     private javax.swing.JPanel jpBarraSuperior;
     private javax.swing.JPanel jpExit;
@@ -680,6 +675,6 @@ public class frmProveedores extends javax.swing.JFrame {
     private javax.swing.JPanel lineaBuscar;
     private javax.swing.JPopupMenu menuTabla;
     public static javax.swing.JTable tbListaProveedores;
-    public javax.swing.JTextField txtBuscar;
+    private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }
