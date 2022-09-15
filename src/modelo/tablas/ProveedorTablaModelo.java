@@ -1,7 +1,7 @@
 package modelo.tablas;
 
 import controlador.ProveedorControlador;
-import controlador.ProveedoresControladorModificar;
+import controlador.ProveedorControladorModificar;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -68,7 +68,7 @@ public class ProveedorTablaModelo {
         ProveedorVO vo = new ProveedorVO();
         ProveedorDAO dao = new ProveedorDAO();
         frmProveedoresModificar VistaMod = new frmProveedoresModificar();
-        ProveedoresControladorModificar controlador = new ProveedoresControladorModificar(vo, dao, VistaMod);
+        ProveedorControladorModificar controlador = new ProveedorControladorModificar(vo, dao, VistaMod);
         controlador.iniciar();
         
         /* Pasa los datos del JTABLE a un campo de texto en 

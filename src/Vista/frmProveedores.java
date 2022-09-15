@@ -11,7 +11,7 @@ import modelo.dao.ProveedorDAO;
 import modelo.vo.ProveedorVO;
 import utilidades.jtable.pintar_tablas.pintarProveedores;
 import controlador.ProveedorControlador;
-import controlador.ProveedoresControladorModificar;
+import controlador.ProveedorControladorModificar;
 import modelo.tablas.ProveedorTablaModelo;
 
 public class frmProveedores extends javax.swing.JFrame {
@@ -136,9 +136,6 @@ public class frmProveedores extends javax.swing.JFrame {
         header = new javax.swing.JPanel();
         lbHeader = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        btnAñadirProducto1 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         btnAñadirProducto = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -315,35 +312,6 @@ public class frmProveedores extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(241, 241, 241));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnAñadirProducto1.setBackground(new java.awt.Color(34, 87, 126));
-        btnAñadirProducto1.setForeground(new java.awt.Color(241, 241, 241));
-        btnAñadirProducto1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAñadirProducto1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnAñadirProducto1MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnAñadirProducto1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnAñadirProducto1MouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnAñadirProducto1MousePressed(evt);
-            }
-        });
-        btnAñadirProducto1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel6.setFont(new java.awt.Font("Roboto Medium", 0, 20)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(241, 241, 241));
-        jLabel6.setText("Modificar Proveedor");
-        btnAñadirProducto1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 7, -1, -1));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/productos/btnAñadir.png"))); // NOI18N
-        btnAñadirProducto1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 6, 24, 24));
-
-        jPanel2.add(btnAñadirProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 25, 277, 35));
 
         btnAñadirProducto.setBackground(new java.awt.Color(34, 87, 126));
         btnAñadirProducto.setForeground(new java.awt.Color(241, 241, 241));
@@ -645,23 +613,6 @@ public class frmProveedores extends javax.swing.JFrame {
 
     }//GEN-LAST:event_tbListaProveedoresMouseClicked
 
-    private void btnAñadirProducto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAñadirProducto1MouseClicked
-
-
-    }//GEN-LAST:event_btnAñadirProducto1MouseClicked
-
-    private void btnAñadirProducto1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAñadirProducto1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAñadirProducto1MouseEntered
-
-    private void btnAñadirProducto1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAñadirProducto1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAñadirProducto1MouseExited
-
-    private void btnAñadirProducto1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAñadirProducto1MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAñadirProducto1MousePressed
-
     private void tbListaProveedoresMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbListaProveedoresMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_tbListaProveedoresMouseEntered
@@ -698,15 +649,12 @@ public class frmProveedores extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnAñadirProducto;
-    private javax.swing.JPanel btnAñadirProducto1;
     private javax.swing.JPanel btnBuscar;
     private javax.swing.JPanel btnLimpiar;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;

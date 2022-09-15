@@ -10,13 +10,14 @@ import modelo.vo.ProveedorVO;
 import vista.frmProveedoresAgregar;
 import vista.frmProductosModificar;
 import vista.frmProveedoresModificar;
+import modelo.tablas.ProveedorTablaModelo;
 
 public class ProveedorControlador implements ActionListener{
 
     private ProveedorVO vo;
     private ProveedorDAO dao;
     private frmProveedoresAgregar vista;
-    //private frmProveedoresModificar mod;
+    private frmProveedoresModificar mod;
 
     public ProveedorControlador(ProveedorVO vo, ProveedorDAO dao, frmProveedoresAgregar vista) {
         this.vo = vo;
@@ -24,7 +25,6 @@ public class ProveedorControlador implements ActionListener{
         this.vista = vista;
 
         this.vista.btnGuardar.addActionListener(this);
-        //this.mod.btnModificar.addActionListener(this);
     }
 
     public void iniciar() {
@@ -35,7 +35,7 @@ public class ProveedorControlador implements ActionListener{
     public void actionPerformed(ActionEvent evn) {
         
         if (evn.getSource() == vista.btnGuardar) {
-            //vo.setNit(Integer.parseInt(vista.txtCodigoProveedor.getText())); //Se le hace un parseo al texto
+            
             vo.setNit(Integer.parseInt(vista.txtCodigoProveedor.getText()));
             vo.setNombre(vista.txtProveedor.getText());
             vo.setCelular(vista.txtCelular.getText());
@@ -52,27 +52,13 @@ public class ProveedorControlador implements ActionListener{
             }
         }
         
-        /*
+        
         if (evn.getSource() == mod.btnModificar) {
-            //vo.setNit(Integer.parseInt(vista.txtCodigoProveedor.getText())); //Se le hace un parseo al texto
-            vo.setNit(Integer.parseInt(vista.txtCodigoProveedor.getText()));
-            vo.setNombre(vista.txtProveedor.getText());
-            vo.setCelular(vista.txtCelular.getText());
-            vo.setDireccion(vista.txtDireccion.getText());
-            System.out.println("Dentro del condicional evento modificar");
-            
-            if (dao.modificar(vo)) {
-                JOptionPane.showMessageDialog(null, "Registro Guardado");
-                limpiar();
-                llenarCampos();
-            } else {
-                JOptionPane.showMessageDialog(null, "Error al Guardar");
-                limpiar();
-                llenarCampos();
-            }
+            //ESTA FUNCIÓN SE MOVIÓ A: controlador.ProveedoresControladorModificar
         }
-        */
     }
+    
+    
     
     public void limpiar(){
         vista.txtCodigoProveedor.setText(null);

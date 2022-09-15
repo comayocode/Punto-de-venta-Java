@@ -5,16 +5,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import modelo.dao.ProveedorDAO;
+import modelo.tablas.ProveedorTablaModelo;
 import modelo.vo.ProveedorVO;
 import vista.frmProveedoresModificar;
 
-public class ProveedoresControladorModificar implements ActionListener{
+public class ProveedorControladorModificar implements ActionListener{
     
     private ProveedorVO vo;
     private ProveedorDAO dao;
     private frmProveedoresModificar vista;
     
-    public ProveedoresControladorModificar (ProveedorVO vo, ProveedorDAO dao, frmProveedoresModificar vista){
+    public ProveedorControladorModificar (ProveedorVO vo, ProveedorDAO dao, frmProveedoresModificar vista){
         
         this.vo = vo;
         this.dao = dao;
@@ -42,11 +43,18 @@ public class ProveedoresControladorModificar implements ActionListener{
                 JOptionPane.showMessageDialog(null, "Registro Guardado");
                 limpiar();
                 llenarCampos();
+                actualizarTabla();
+                
             } else {
                 JOptionPane.showMessageDialog(null, "Error al Guardar");
                 limpiar();
                 llenarCampos();
             }
+    }
+    
+    public void actualizarTabla() {
+        ProveedorTablaModelo proveedor = new ProveedorTablaModelo();
+        proveedor.mostrarRegistros();
     }
     
     public void limpiar(){
