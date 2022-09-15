@@ -78,7 +78,7 @@ public class frmProveedores extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                proveedor.pasarDatosACampoTexto();
+                proveedor.pasarDatosACampoTextoYIniciarControladorModificar();
 
             }
         });
@@ -116,7 +116,7 @@ public class frmProveedores extends javax.swing.JFrame {
     // Método para pasar los datos de la tabla a los campos de texto de frmProveedoresModificar
     public void pasarDatosACampoModificar() {
         //Llama el método que se encuentra en la clase ProveedorTablaModelo
-        proveedor.pasarDatosACampoTexto();
+        proveedor.pasarDatosACampoTextoYIniciarControladorModificar();
     }
 
     @SuppressWarnings("unchecked")
