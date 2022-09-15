@@ -31,8 +31,8 @@ public class ProveedorControladorModificar implements ActionListener {
         vista.setTitle("Modificar Productos");
     }
 
+// ----- ACTUALIZAR REGISTRO AL DAR CLIC EN btnModificar -----
     public void actionPerformed(ActionEvent evn) {
-
         //Al dar clic en btnModificar, pasa los datos de los campos al vo
         if (evn.getSource() == vista.btnModificar) {
             vo.setNit(Integer.parseInt(vista.txtCodigoProveedor.getText()));
@@ -42,7 +42,7 @@ public class ProveedorControladorModificar implements ActionListener {
         }
 
         if (dao.modificar(vo)) {
-            JOptionPane.showMessageDialog(null, "Registro Actualizado");
+            JOptionPane.showMessageDialog(null, "Registro Modificado");
 
             //Métodos despues de actualizar registro
             limpiar();
@@ -51,13 +51,14 @@ public class ProveedorControladorModificar implements ActionListener {
             
         //Error si no se actualiza el registro
         } else {
-            JOptionPane.showMessageDialog(null, "Error al Guardar");
+            JOptionPane.showMessageDialog(null, "Error al Modificar");
             
             //Métodos después del mensaje de erro
             limpiar();
             llenarCampos();
         }
     }
+// ----- FIN ACTUALIZAR REGISTRO AL DAR CLIC EN btnModificar -----
 
     //Actualiza la tabla cuando se Modifica o guarda un registro
     public void actualizarTabla() {
