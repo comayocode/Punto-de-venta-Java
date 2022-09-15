@@ -11,7 +11,6 @@ import modelo.dao.ProveedorDAO;
 import modelo.vo.ProveedorVO;
 import utilidades.jtable.pintar_tablas.pintarProveedores;
 import controlador.ProveedorControlador;
-import controlador.ProveedorControladorModificar;
 import modelo.tablas.ProveedorTablaModelo;
 
 public class frmProveedores extends javax.swing.JFrame {
@@ -79,7 +78,7 @@ public class frmProveedores extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 proveedor.pasarDatosACampoTextoYIniciarControladorModificar();
-
+                
             }
         });
 
@@ -118,7 +117,7 @@ public class frmProveedores extends javax.swing.JFrame {
         //Llama el método que se encuentra en la clase ProveedorTablaModelo
         proveedor.pasarDatosACampoTextoYIniciarControladorModificar();
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -369,7 +368,8 @@ public class frmProveedores extends javax.swing.JFrame {
         tbListaProveedores.setMinimumSize(new java.awt.Dimension(105, 530));
         tbListaProveedores.setPreferredSize(new java.awt.Dimension(525, 530));
         tbListaProveedores.setRowHeight(25);
-        tbListaProveedores.setShowGrid(true);
+        tbListaProveedores.setShowGrid(false);
+        tbListaProveedores.setShowHorizontalLines(true);
         tbListaProveedores.getTableHeader().setReorderingAllowed(false);
         tbListaProveedores.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
