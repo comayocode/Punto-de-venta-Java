@@ -1,134 +1,137 @@
 package vista;
 
 import java.awt.Color;
-import modelo.dao.ProveedorDAO;
-import modelo.vo.ProveedorVO;
 
 public class frmProveedoresModificar extends javax.swing.JFrame {
 
     public frmProveedoresModificar() {
         initComponents();
-        this.setLocationRelativeTo(null);
-        setTitle("Modificar Productos");
-        
-        //ProveedorTablaModelo m = new ProveedorTablaModelo();
-        //m.pasarDatosACampoTexto();
     }
-    
-    // ---- MÉTODOS PARA VACIAR Y LLENAR LOS CAMPOS DE TEXTO ----
+
+// ---- MÉTODOS PARA VACIAR Y LLENAR LOS CAMPOS DE TEXTO ----
     //Método para txtCodigoProveedor
-    public void codigoPresionado(){
-        if(txtCodigoProveedor.getText().equals("Código")){ //Si el campo tiene "Código"...
+    public void codigoPresionado() {
+        if (txtCodigoProveedor.getText().equals("Código")) { //Si el campo tiene "Código"...
             txtCodigoProveedor.setText(""); //Quita el texto
             txtCodigoProveedor.setForeground(new Color(0x100F0F)); //Cambia de color la letra
         }
-        
-        if(txtProveedor.getText().isEmpty()){ //Si al dar clic en txtCodigo, txtProveedor está vacío...
+
+        if (txtProveedor.getText().isEmpty()) { //Si al dar clic en txtCodigo, txtProveedor está vacío...
             txtProveedor.setText("Nombre"); //Llena el campo con "Nombre"
             txtProveedor.setForeground(new Color(0x666666)); //Cambia el color del texto
         }
-        
-        if(txtCelular.getText().isEmpty()){ //Si al dar clic en txtCodigo, txtCelular está vacío...
+
+        if (txtCelular.getText().isEmpty()) { //Si al dar clic en txtCodigo, txtCelular está vacío...
             txtCelular.setText("Celular"); //Llena el campo con "Celular"
             txtCelular.setForeground(new Color(0x666666)); //Cambia el color del texto
         }
-        
-        if(txtDireccion.getText().isEmpty()){ //Si al dar clic en txtCodigo, txtDirección está vacío...
+
+        if (txtDireccion.getText().isEmpty()) { //Si al dar clic en txtCodigo, txtDirección está vacío...
             txtDireccion.setText("Dirección"); //Llena el campo con "Dirección"
             txtDireccion.setForeground(new Color(0x666666)); //Cambia el color del texto
         }
     }
+
     //Método para txtProveedor
-    public void proveedorPresionado(){
-        if(txtProveedor.getText().equals("Nombre")){
+    public void proveedorPresionado() {
+        if (txtProveedor.getText().equals("Nombre")) {
             txtProveedor.setText("");
             txtProveedor.setForeground(new Color(0x100F0F));
         }
-        
-        if(txtCodigoProveedor.getText().isEmpty()){
+
+        if (txtCodigoProveedor.getText().isEmpty()) {
             txtCodigoProveedor.setText("Código");
             txtCodigoProveedor.setForeground(new Color(0x666666));
         }
-        
-        if(txtCelular.getText().isEmpty()){
+
+        if (txtCelular.getText().isEmpty()) {
             txtCelular.setText("Celular");
             txtCelular.setForeground(new Color(0x666666));
         }
-        
-        if(txtDireccion.getText().isEmpty()){
+
+        if (txtDireccion.getText().isEmpty()) {
             txtDireccion.setText("Dirección");
             txtDireccion.setForeground(new Color(0x666666));
         }
     }
+
     //Método para txtCelular
-    public void celularPresionado(){
-        if(txtCelular.getText().equals("Celular")){
+    public void celularPresionado() {
+        if (txtCelular.getText().equals("Celular")) {
             txtCelular.setText("");
             txtCelular.setForeground(new Color(0x100F0F));
         }
-        
-        if(txtCodigoProveedor.getText().isEmpty()){
-            txtCodigoProveedor.setText("Código"); 
-            txtCodigoProveedor.setForeground(new Color(0x666666)); 
+
+        if (txtCodigoProveedor.getText().isEmpty()) {
+            txtCodigoProveedor.setText("Código");
+            txtCodigoProveedor.setForeground(new Color(0x666666));
         }
-        
-        if(txtProveedor.getText().isEmpty()){
+
+        if (txtProveedor.getText().isEmpty()) {
             txtProveedor.setText("Nombre");
             txtProveedor.setForeground(new Color(0x666666));
         }
-        
-        if(txtDireccion.getText().isEmpty()){
+
+        if (txtDireccion.getText().isEmpty()) {
             txtDireccion.setText("Dirección");
             txtDireccion.setForeground(new Color(0x666666));
         }
     }
+
     //Método para txtDireccion
-    public void direccionPresionado(){
-        if(txtDireccion.getText().equals("Dirección")){
+    public void direccionPresionado() {
+        if (txtDireccion.getText().equals("Dirección")) {
             txtDireccion.setText("");
             txtDireccion.setForeground(new Color(0x100F0F));
         }
-        
-        if(txtCodigoProveedor.getText().isEmpty()){
-            txtCodigoProveedor.setText("Código"); 
-            txtCodigoProveedor.setForeground(new Color(0x666666)); 
+
+        if (txtCodigoProveedor.getText().isEmpty()) {
+            txtCodigoProveedor.setText("Código");
+            txtCodigoProveedor.setForeground(new Color(0x666666));
         }
-        
-        if(txtProveedor.getText().isEmpty()){
+
+        if (txtProveedor.getText().isEmpty()) {
             txtProveedor.setText("Nombre");
             txtProveedor.setForeground(new Color(0x666666));
         }
-        
-        if(txtCelular.getText().isEmpty()){
+
+        if (txtCelular.getText().isEmpty()) {
             txtCelular.setText("Celular");
             txtCelular.setForeground(new Color(0x666666));
         }
-        
+
     }
-    
-    // ---- MÉTODO PARA LLENAR CAMPO AL DAR CLIC EN BG ----
-    public void llenarClicBg(){
-        if(txtCodigoProveedor.getText().isEmpty()){
-            txtCodigoProveedor.setText("Código"); 
-            txtCodigoProveedor.setForeground(new Color(0x666666)); 
+// ---- FIN MÉTODOS PARA VACIAR Y LLENAR LOS CAMPOS DE TEXTO ----
+
+// ---- MÉTODO PARA LLENAR CAMPO AL DAR CLIC EN BG ----
+    public void llenarClicBg() {
+        if (txtCodigoProveedor.getText().isEmpty()) {
+            txtCodigoProveedor.setText("Código");
+            txtCodigoProveedor.setForeground(new Color(0x666666));
         }
-        
-        if(txtProveedor.getText().isEmpty()){
+
+        if (txtProveedor.getText().isEmpty()) {
             txtProveedor.setText("Nombre");
             txtProveedor.setForeground(new Color(0x666666));
         }
-        
-        if(txtCelular.getText().isEmpty()){
+
+        if (txtCelular.getText().isEmpty()) {
             txtCelular.setText("Celular");
             txtCelular.setForeground(new Color(0x666666));
         }
-        
-        if(txtDireccion.getText().isEmpty()){
+
+        if (txtDireccion.getText().isEmpty()) {
             txtDireccion.setText("Dirección");
             txtDireccion.setForeground(new Color(0x666666));
         }
     }
-    
+// ---- FIN MÉTODO PARA LLENAR CAMPO AL DAR CLIC EN BG ----
+
+    //Método para cerrar Frame
+    public void cerrarFrameModificar() {
+        dispose();
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -202,11 +205,6 @@ public class frmProveedoresModificar extends javax.swing.JFrame {
         txtCelular.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtCelularMousePressed(evt);
-            }
-        });
-        txtCelular.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCelularActionPerformed(evt);
             }
         });
         body.add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 117, 190, 20));
@@ -386,7 +384,7 @@ public class frmProveedoresModificar extends javax.swing.JFrame {
     }//GEN-LAST:event_txtProveedorMousePressed
 
     private void lbExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExitMouseClicked
-        this.dispose();
+        cerrarFrameModificar();
     }//GEN-LAST:event_lbExitMouseClicked
 
     private void lbExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExitMouseEntered
@@ -398,7 +396,7 @@ public class frmProveedoresModificar extends javax.swing.JFrame {
         jpExit.setBackground(new Color(0x100F0F));
         lbExit.setForeground(new Color(0xF1F1F1));
     }//GEN-LAST:event_lbExitMouseExited
-    
+
     private void txtCodigoProveedorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCodigoProveedorMousePressed
         codigoPresionado();
     }//GEN-LAST:event_txtCodigoProveedorMousePressed
@@ -410,11 +408,9 @@ public class frmProveedoresModificar extends javax.swing.JFrame {
     // ---- EVENTOS btnGuardar ----
     private void btnModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModificarMouseClicked
         btnModificar.setBackground(new Color(0x2b628c));
-        
-        
     }//GEN-LAST:event_btnModificarMouseClicked
     private void btnModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModificarMouseEntered
-        btnModificar.setBackground(new Color(0x2b628c));        
+        btnModificar.setBackground(new Color(0x2b628c));
     }//GEN-LAST:event_btnModificarMouseEntered
     private void btnModificarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModificarMouseExited
         btnModificar.setBackground(new Color(0x22577E));
@@ -431,11 +427,6 @@ public class frmProveedoresModificar extends javax.swing.JFrame {
         direccionPresionado();
     }//GEN-LAST:event_txtDireccionMousePressed
 
-    private void txtCelularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCelularActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCelularActionPerformed
-
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -471,7 +462,7 @@ public class frmProveedoresModificar extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new frmProveedoresModificar().setVisible(true);
-                
+
             }
         });
     }
