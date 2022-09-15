@@ -11,15 +11,16 @@ import modelo.dao.ProveedorDAO;
 import modelo.vo.ProveedorVO;
 import utilidades.jtable.pintar_tablas.pintarProveedores;
 import controlador.ProveedorControlador;
+import controlador.ProveedoresControladorModificar;
 import modelo.tablas.ProveedorTablaModelo;
 
 public class frmProveedores extends javax.swing.JFrame {
-    
+
     //Variables para lograr mover la ventana arrastrando el JPanel
     int xMouse, yMouse;
-    
+
     //Instanciar la clase ProveedorTablaModelo que se usará en los métodos pasarDatosACampoModificar &  mostrarProveedores
-    ProveedorTablaModelo proveedor = new ProveedorTablaModelo(); 
+    ProveedorTablaModelo proveedor = new ProveedorTablaModelo();
 
     public frmProveedores() {
         initComponents();
@@ -29,7 +30,7 @@ public class frmProveedores extends javax.swing.JFrame {
         pintarProveedores.editarHeaderJtable(); //Pone estilos al header de la tabla
         inicarpopUpMenuTabla(); //Inicia el método para ver las opciones al dar clic derecho a la tabla
         mostrarProveedoresDB(); //Muestra los datos de la DB en el JTable
-        
+
     }
 
     //Método para editar estilo y acciones del Joption.showConfirmDialog
@@ -76,10 +77,9 @@ public class frmProveedores extends javax.swing.JFrame {
         modificar.addActionListener(new ActionListener() {  //Si la opcion escogida es "Modificar"
             @Override
             public void actionPerformed(ActionEvent e) {
-                
-                
+
                 proveedor.pasarDatosACampoTexto();
-                
+
             }
         });
 
@@ -642,11 +642,11 @@ public class frmProveedores extends javax.swing.JFrame {
     }//GEN-LAST:event_formMousePressed
 
     private void tbListaProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbListaProveedoresMouseClicked
-        
+
     }//GEN-LAST:event_tbListaProveedoresMouseClicked
 
     private void btnAñadirProducto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAñadirProducto1MouseClicked
-        
+
 
     }//GEN-LAST:event_btnAñadirProducto1MouseClicked
 

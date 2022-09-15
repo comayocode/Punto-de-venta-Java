@@ -44,7 +44,7 @@ public class ProveedorDAO extends Conexion {
         PreparedStatement ps = null;
         Connection con = getConexion();
 
-        String consulta = "UPDATE proveedor SET nombre=?, celular=? direccion=? WHERE nit=?";
+        String consulta = "UPDATE proveedor SET nombre=?, celular=?, direccion=? WHERE nit=?";
 
         try {
             ps = con.prepareStatement(consulta);

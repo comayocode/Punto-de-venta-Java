@@ -1,8 +1,8 @@
 package vista;
 
 import java.awt.Color;
-import static vista.frmProveedores.tbListaProveedores;
-import modelo.tablas.ProveedorTablaModelo;
+import modelo.dao.ProveedorDAO;
+import modelo.vo.ProveedorVO;
 
 public class frmProveedoresModificar extends javax.swing.JFrame {
 
@@ -410,6 +410,8 @@ public class frmProveedoresModificar extends javax.swing.JFrame {
     // ---- EVENTOS btnGuardar ----
     private void btnModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModificarMouseClicked
         btnModificar.setBackground(new Color(0x2b628c));
+        
+        
     }//GEN-LAST:event_btnModificarMouseClicked
     private void btnModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModificarMouseEntered
         btnModificar.setBackground(new Color(0x2b628c));        

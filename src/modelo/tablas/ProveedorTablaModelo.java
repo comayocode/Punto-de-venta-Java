@@ -1,6 +1,7 @@
 package modelo.tablas;
 
 import controlador.ProveedorControlador;
+import controlador.ProveedoresControladorModificar;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,6 +12,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import modelo.dao.Conexion;
+import modelo.dao.ProveedorDAO;
+import modelo.vo.ProveedorVO;
 import utilidades.jtable.pintar_tablas.pintarProveedores;
 import static vista.frmProveedores.tbListaProveedores;
 import vista.frmProveedoresModificar;
@@ -59,12 +62,18 @@ public class ProveedorTablaModelo {
     }
             
 
-    public void pasarDatosACampoTexto(){
+    public void pasarDatosACampoTextoYIniciarControladorModificar(){
         
+        //Se inicia el controlodor en este lugar porque si se inicia en otro sitio se tendría que abrir 2 veces frmProveedoresModificar
+        ProveedorVO vo = new ProveedorVO();
+        ProveedorDAO dao = new ProveedorDAO();
         frmProveedoresModificar VistaMod = new frmProveedoresModificar();
+        ProveedoresControladorModificar controlador = new ProveedoresControladorModificar(vo, dao, VistaMod);
+        controlador.iniciar();
         
         /* Pasa los datos del JTABLE a un campo de texto en 
         otro JFRAME*/
+        
         VistaMod.txtCodigoProveedor.setText(String.valueOf(tbListaProveedores.getValueAt(tbListaProveedores.getSelectedRow(), 0)));
         VistaMod.txtProveedor.setText(String.valueOf(tbListaProveedores.getValueAt(tbListaProveedores.getSelectedRow(), 1)));
         VistaMod.txtCelular.setText(String.valueOf(tbListaProveedores.getValueAt(tbListaProveedores.getSelectedRow(), 2)));
