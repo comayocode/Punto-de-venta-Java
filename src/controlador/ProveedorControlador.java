@@ -45,6 +45,7 @@ public class ProveedorControlador implements ActionListener{
                 JOptionPane.showMessageDialog(null, "Registro Guardado");
                 limpiar();
                 llenarCampos();
+                actualizarTabla();
             } else {
                 JOptionPane.showMessageDialog(null, "Error al Guardar");
                 limpiar();
@@ -52,13 +53,18 @@ public class ProveedorControlador implements ActionListener{
             }
         }
         
-        
-        if (evn.getSource() == mod.btnModificar) {
+        /*        
+            if (evn.getSource() == mod.btnModificar) {
             //ESTA FUNCIÓN SE MOVIÓ A: controlador.ProveedoresControladorModificar
         }
+        */
     }
     
-    
+    //Actualiza la tabla cuando se Modifica o guarda un registro
+    public void actualizarTabla() {
+        ProveedorTablaModelo proveedor = new ProveedorTablaModelo();
+        proveedor.mostrarRegistros();
+    }
     
     public void limpiar(){
         vista.txtCodigoProveedor.setText(null);
