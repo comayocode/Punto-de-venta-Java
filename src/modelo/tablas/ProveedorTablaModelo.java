@@ -1,6 +1,8 @@
 package modelo.tablas;
 
+import Vista.frmProveedoresEliminar;
 import controlador.ProveedorControlador;
+import controlador.ProveedorControladorEliminar;
 import controlador.ProveedorControladorModificar;
 import java.awt.Color;
 import java.sql.Connection;
@@ -87,5 +89,21 @@ public class ProveedorTablaModelo {
          
         //Muestra los datos que se pasaron
         VistaMod.setVisible(true);
+    }
+    
+    public void pasarDatosACampoTextoEIniciarProveedorControladorEliminar(){
+        ProveedorVO vo = new ProveedorVO();
+        ProveedorDAO dao = new ProveedorDAO();
+        frmProveedoresEliminar VistaEli = new frmProveedoresEliminar();
+        ProveedorControladorEliminar controlador = new ProveedorControladorEliminar(vo, dao, VistaEli);
+        controlador.iniciar();
+        
+        VistaEli.txtCodigoProveedor.setText(String.valueOf(tbListaProveedores.getValueAt(tbListaProveedores.getSelectedRow(), 0)));
+        VistaEli.txtProveedor.setText(String.valueOf(tbListaProveedores.getValueAt(tbListaProveedores.getSelectedRow(), 1)));
+        
+        VistaEli.txtCodigoProveedor.setForeground(new Color(0x100F0F));
+        VistaEli.txtProveedor.setForeground(new Color(0x100F0F));
+        
+        VistaEli.setVisible(true);
     }
 }

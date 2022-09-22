@@ -1,5 +1,6 @@
 package vista;
 
+import Vista.frmProveedoresEliminar;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,6 +12,7 @@ import modelo.dao.ProveedorDAO;
 import modelo.vo.ProveedorVO;
 import utilidades.jtable.pintar_tablas.pintarProveedores;
 import controlador.ProveedorControlador;
+import controlador.ProveedorControladorEliminar;
 import modelo.tablas.ProveedorTablaModelo;
 
 public class frmProveedores extends javax.swing.JFrame {
@@ -48,7 +50,7 @@ public class frmProveedores extends javax.swing.JFrame {
                 null, //No usar icono
                 botones, //Titulo de los botones
                 botones[0]); //Botones
-
+        
         // --- ACCIONES ---
         //Validar la opción escogida
         if (opcion == JOptionPane.YES_OPTION) { //Si la opción es "Confirmar"...
@@ -56,10 +58,17 @@ public class frmProveedores extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Eliminado", "Proveedor eliminado", JOptionPane.NO_OPTION);
         } else if (opcion == JOptionPane.YES_NO_OPTION) { //Si la opción es "Cancelar"
             //No hacer nada
-            setDefaultCloseOperation(frmMenu.DO_NOTHING_ON_CLOSE);
+            noHacerNadaAlCerrar();
         }
     }
+    
+    
 
+    
+    public void noHacerNadaAlCerrar() {
+        setDefaultCloseOperation(frmMenu.DO_NOTHING_ON_CLOSE);
+    }
+    
     //Opciones de menu al dar clic derecho en la tabla
     public void inicarpopUpMenuTabla() {
         JMenuItem modificar = new JMenuItem("Modificar", getIcon("/img/clientes/edit.png", 20, 20));
@@ -76,9 +85,7 @@ public class frmProveedores extends javax.swing.JFrame {
         modificar.addActionListener(new ActionListener() {  //Si la opcion escogida es "Modificar"
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                proveedor.pasarDatosACampoTextoYIniciarControladorModificar();
-                
+                pasarDatosACampoModificar(); //Llamado del método para pasar los datos a los campos de texto
             }
         });
 
@@ -86,8 +93,7 @@ public class frmProveedores extends javax.swing.JFrame {
         eliminar.addActionListener(new ActionListener() { //Si la opción escogida es "Eliminar"
             @Override
             public void actionPerformed(ActionEvent e) {
-                //llamar método de otra clase con la función de eliminar
-                confirmarEliminar();
+                pasarDatosACampoEliminar(); //Llamado del método para pasar los datos a los campos de texto
             }
         });
     }
@@ -118,6 +124,14 @@ public class frmProveedores extends javax.swing.JFrame {
         proveedor.pasarDatosACampoTextoYIniciarControladorModificar();
     }
     
+    public void pasarDatosACampoEliminar(){
+        proveedor.pasarDatosACampoTextoEIniciarProveedorControladorEliminar();
+    }
+    
+    public void cerrarFrameEliminar(){
+        dispose();
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -380,6 +394,7 @@ public class frmProveedores extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tbListaProveedores);
+        tbListaProveedores.getAccessibleContext().setAccessibleParent(null);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 165, 716, 281));
 

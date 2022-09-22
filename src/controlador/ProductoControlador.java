@@ -26,7 +26,6 @@ public class ProductoControlador implements ActionListener{
         
         //Declarar acciones para los botones de la vista (requiere poner publico el boton)
         this.vista.btnGuardar.addActionListener(this);
-        this.modificar.btnModificar.addActionListener(this);
         
     }
     
