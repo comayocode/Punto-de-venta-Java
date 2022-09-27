@@ -9,10 +9,17 @@ import javax.swing.JOptionPane;
 import utilidades.jtable.pintar_tablas.pintarClientes;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import modelo.tablas.ClienteTablaModelo;
+import modelo.vo.ClienteVO;
+import modelo.dao.ClienteDAO;
+import controlador.ClienteControladorAgregar;
 
 public class frmClientes extends javax.swing.JFrame {
 
     int xMouse, yMouse;
+    
+    //Instanciar la clase ProveedorTablaModelo que se usará en los métodos pasarDatosACampoModificar &  mostrarProveedores
+    ClienteTablaModelo cliente = new ClienteTablaModelo();
     
     public frmClientes() {
         initComponents();
@@ -21,15 +28,16 @@ public class frmClientes extends javax.swing.JFrame {
         pintarClientes.pintar();
         pintarClientes.editarHeaderJtable();
         inicarpopUpMenuTabla();
+        mostrarClientesDB();
     }
     
     //Método para editar estilo y acciones del Joption.showConfirmDialog
     public void confirmarEliminar() {
-        
+
         // --- ESTILOS ---
         //Añadir las opciones a un arreglo
         Object[] botones = {"Confirmar", "Cancelar"};
-        
+
         //Guardar la selección de opción en una variable
         int opcion = JOptionPane.showOptionDialog(null, //Centrar ventana
                 "¿Seguro que quiere eliminar el Cliente?", //Mensaje/Pregunta
@@ -39,47 +47,47 @@ public class frmClientes extends javax.swing.JFrame {
                 null, //No usar icono
                 botones, //Titulo de los botones
                 botones[0]); //Botones
-
+        
         // --- ACCIONES ---
         //Validar la opción escogida
-        if (opcion == JOptionPane.YES_OPTION){ //Si la opción es "Confirmar"...
+        if (opcion == JOptionPane.YES_OPTION) { //Si la opción es "Confirmar"...
             //Codigo a ejecutar aquí
             JOptionPane.showMessageDialog(null, "Eliminado", "Cliente eliminado", JOptionPane.NO_OPTION);
         } else if (opcion == JOptionPane.YES_NO_OPTION) { //Si la opción es "Cancelar"
             //No hacer nada
-            setDefaultCloseOperation(frmMenu.DO_NOTHING_ON_CLOSE);
+            noHacerNadaAlCerrar();
         }
     }
     
+    public void noHacerNadaAlCerrar() {
+        setDefaultCloseOperation(frmMenu.DO_NOTHING_ON_CLOSE);
+    }
+    
     //Opciones de menu al dar clic derecho en la tabla
-    public void inicarpopUpMenuTabla(){
+    public void inicarpopUpMenuTabla() {
         JMenuItem modificar = new JMenuItem("Modificar", getIcon("/img/clientes/edit.png", 20, 20));
         JMenuItem eliminar = new JMenuItem("Eliminar", getIcon("/img/clientes/delete.png", 20, 20));
-        
+
         //Añadir las opciones al popupmenu
         menuTabla.add(modificar);
         menuTabla.add(eliminar);
-        
+
         tbListaClientes.setComponentPopupMenu(menuTabla); //Le pasamos el popupMenu a la tabla
-        
+
         // ----- AÑADIR LAS ACCIONES PARA CADA OPCION -----
-        
         //Acción de la opción "editar"
         modificar.addActionListener(new ActionListener() {  //Si la opcion escogida es "Modificar"
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Codigo a ejecutar
-                frmClientesModificar modificar = new frmClientesModificar();
-                modificar.setVisible(true);
+                pasarDatoACampoModificar(); //Llamado del método para pasar los datos a los campos de texto
             }
         });
-        
+
         //Acción de la opción "Eliminar"
         eliminar.addActionListener(new ActionListener() { //Si la opción escogida es "Eliminar"
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Codigo a ejecutar
-                confirmarEliminar();
+                
             }
         });
     }
@@ -98,6 +106,15 @@ public class frmClientes extends javax.swing.JFrame {
             txtBuscar.setText("Nombre del Cliente");
             txtBuscar.setForeground(new Color(0x666666));
         }
+    }
+    
+    public void mostrarClientesDB() {
+        //Llama el método que se encuentra en la clase ProveedorTablaModelo
+        cliente.mostrarRegistros();
+    }
+    
+    public void pasarDatoACampoModificar() {
+        cliente.pasarDatosACampoTextoEIniciarControladorModificar();
     }
     
     @SuppressWarnings("unchecked")
@@ -341,44 +358,17 @@ public class frmClientes extends javax.swing.JFrame {
         tbListaClientes.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         tbListaClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"001", "Marcos Antonio Aguirre", "3121234567", "av 100"},
-                {"002", "Camilo Martinez", "3121234567", "av 100"},
-                {"003", "Marlon Moreno", "3207654331", "cll 13"},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Documento", "Nombre", "Celular", "Dirección"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
-        });
+        ));
         tbListaClientes.setMinimumSize(new java.awt.Dimension(105, 530));
         tbListaClientes.setPreferredSize(new java.awt.Dimension(525, 530));
         tbListaClientes.setRowHeight(25);
         tbListaClientes.setShowGrid(true);
+        tbListaClientes.setShowVerticalLines(false);
         tbListaClientes.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tbListaClientes);
 
@@ -543,8 +533,12 @@ public class frmClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_jpBarraSuperiorMousePressed
 
     private void btnAñadirClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAñadirClienteMouseClicked
-        frmClientesAgregar cliente = new frmClientesAgregar();
-        cliente.setVisible(true);
+        ClienteVO vo = new ClienteVO();
+        ClienteDAO dao = new ClienteDAO();
+        frmClientesAgregar vista = new frmClientesAgregar();
+        ClienteControladorAgregar controlador = new ClienteControladorAgregar(vo, dao, vista);
+        controlador.iniciar();
+        vista.setVisible(true);
 
         btnAñadirCliente.setBackground(new Color(0x2b628c));
     }//GEN-LAST:event_btnAñadirClienteMouseClicked
