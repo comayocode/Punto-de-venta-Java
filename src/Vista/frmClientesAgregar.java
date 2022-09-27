@@ -462,7 +462,7 @@ public class frmClientesAgregar extends javax.swing.JFrame {
     private javax.swing.JPanel bg;
     private javax.swing.JPanel body;
     private javax.swing.JPanel btnExit;
-    private javax.swing.JButton btnGuardar;
+    public javax.swing.JButton btnGuardar;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lbExit;
@@ -472,9 +472,9 @@ public class frmClientesAgregar extends javax.swing.JFrame {
     private javax.swing.JPanel separado3;
     private javax.swing.JPanel separador;
     private javax.swing.JPanel topMenu;
-    private javax.swing.JTextField txtCelular;
-    private javax.swing.JTextField txtCliente;
-    private javax.swing.JTextField txtDireccion;
-    private javax.swing.JTextField txtDocumento;
+    public javax.swing.JTextField txtCelular;
+    public javax.swing.JTextField txtCliente;
+    public javax.swing.JTextField txtDireccion;
+    public javax.swing.JTextField txtDocumento;
     // End of variables declaration//GEN-END:variables
 }
