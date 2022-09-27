@@ -1,0 +1,13 @@
+CREATE TABLE producto (
+	codigo INT(5) PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE proveedor(
+	nit INTEGER(15) PRIMARY KEY NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
+    celular VARCHAR(15) NULL,
+    direccion VARCHAR(25) NULL
+);
+
+ALTER TABLE proveedor MODIFY COLUMN nit INTEGER(15);
