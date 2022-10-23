@@ -13,9 +13,9 @@ public class frmClientesAgregar extends javax.swing.JFrame {
     // ---- MÉTODOS PARA VACIAR Y LLENAR LOS CAMPOS DE TEXTO ----
     //Método para txtCodigoProveedor
     public void codigoPresionado(){
-        if(txtDocumento.getText().equals("Documento")){ //Si el campo tiene "Código"...
-            txtDocumento.setText(""); //Quita el texto
-            txtDocumento.setForeground(new Color(0x100F0F)); //Cambia de color la letra
+        if(txtCedula.getText().equals("Cédula")){ //Si el campo tiene "Código"...
+            txtCedula.setText(""); //Quita el texto
+            txtCedula.setForeground(new Color(0x100F0F)); //Cambia de color la letra
         }
         
         if(txtCliente.getText().isEmpty()){ //Si al dar clic en txtCodigo, txtProveedor está vacío...
@@ -40,9 +40,9 @@ public class frmClientesAgregar extends javax.swing.JFrame {
             txtCliente.setForeground(new Color(0x100F0F));
         }
         
-        if(txtDocumento.getText().isEmpty()){
-            txtDocumento.setText("Documento");
-            txtDocumento.setForeground(new Color(0x666666));
+        if(txtCedula.getText().isEmpty()){
+            txtCedula.setText("Cédula");
+            txtCedula.setForeground(new Color(0x666666));
         }
         
         if(txtCelular.getText().isEmpty()){
@@ -62,9 +62,9 @@ public class frmClientesAgregar extends javax.swing.JFrame {
             txtCelular.setForeground(new Color(0x100F0F));
         }
         
-        if(txtDocumento.getText().isEmpty()){
-            txtDocumento.setText("Documento"); 
-            txtDocumento.setForeground(new Color(0x666666)); 
+        if(txtCedula.getText().isEmpty()){
+            txtCedula.setText("Cédula"); 
+            txtCedula.setForeground(new Color(0x666666)); 
         }
         
         if(txtCliente.getText().isEmpty()){
@@ -84,9 +84,9 @@ public class frmClientesAgregar extends javax.swing.JFrame {
             txtDireccion.setForeground(new Color(0x100F0F));
         }
         
-        if(txtDocumento.getText().isEmpty()){
-            txtDocumento.setText("Documento"); 
-            txtDocumento.setForeground(new Color(0x666666)); 
+        if(txtCedula.getText().isEmpty()){
+            txtCedula.setText("Cédula"); 
+            txtCedula.setForeground(new Color(0x666666)); 
         }
         
         if(txtCliente.getText().isEmpty()){
@@ -103,9 +103,9 @@ public class frmClientesAgregar extends javax.swing.JFrame {
     
     // ---- MÉTODO PARA LLENAR CAMPO AL DAR CLIC EN BG ----
     public void llenarClicBg(){
-        if(txtDocumento.getText().isEmpty()){
-            txtDocumento.setText("Documento"); 
-            txtDocumento.setForeground(new Color(0x666666)); 
+        if(txtCedula.getText().isEmpty()){
+            txtCedula.setText("Cédula"); 
+            txtCedula.setForeground(new Color(0x666666)); 
         }
         
         if(txtCliente.getText().isEmpty()){
@@ -136,7 +136,7 @@ public class frmClientesAgregar extends javax.swing.JFrame {
         separado2 = new javax.swing.JPanel();
         txtCliente = new javax.swing.JTextField();
         separado = new javax.swing.JPanel();
-        txtDocumento = new javax.swing.JTextField();
+        txtCedula = new javax.swing.JTextField();
         separador = new javax.swing.JPanel();
         btnGuardar = new javax.swing.JButton();
         topMenu = new javax.swing.JPanel();
@@ -243,17 +243,17 @@ public class frmClientesAgregar extends javax.swing.JFrame {
 
         body.add(separado, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 97, 190, 2));
 
-        txtDocumento.setBackground(new java.awt.Color(241, 241, 241));
-        txtDocumento.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        txtDocumento.setForeground(new java.awt.Color(102, 102, 102));
-        txtDocumento.setText("Documento");
-        txtDocumento.setBorder(null);
-        txtDocumento.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtCedula.setBackground(new java.awt.Color(241, 241, 241));
+        txtCedula.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        txtCedula.setForeground(new java.awt.Color(102, 102, 102));
+        txtCedula.setText("Cédula");
+        txtCedula.setBorder(null);
+        txtCedula.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                txtDocumentoMousePressed(evt);
+                txtCedulaMousePressed(evt);
             }
         });
-        body.add(txtDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 25, 190, 21));
+        body.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 25, 190, 21));
 
         separador.setBackground(new java.awt.Color(16, 15, 15));
 
@@ -389,9 +389,9 @@ public class frmClientesAgregar extends javax.swing.JFrame {
         lbExit.setForeground(new Color(0xF1F1F1));
     }//GEN-LAST:event_lbExitMouseExited
     
-    private void txtDocumentoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDocumentoMousePressed
+    private void txtCedulaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCedulaMousePressed
         codigoPresionado();
-    }//GEN-LAST:event_txtDocumentoMousePressed
+    }//GEN-LAST:event_txtCedulaMousePressed
 
     private void bgMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bgMousePressed
         llenarClicBg();
@@ -472,9 +472,9 @@ public class frmClientesAgregar extends javax.swing.JFrame {
     private javax.swing.JPanel separado3;
     private javax.swing.JPanel separador;
     private javax.swing.JPanel topMenu;
+    public javax.swing.JTextField txtCedula;
     public javax.swing.JTextField txtCelular;
     public javax.swing.JTextField txtCliente;
     public javax.swing.JTextField txtDireccion;
-    public javax.swing.JTextField txtDocumento;
     // End of variables declaration//GEN-END:variables
 }

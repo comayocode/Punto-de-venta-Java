@@ -87,7 +87,7 @@ public class frmClientes extends javax.swing.JFrame {
         eliminar.addActionListener(new ActionListener() { //Si la opción escogida es "Eliminar"
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                pasarDatosACampoEliminar();
             }
         });
     }
@@ -115,6 +115,10 @@ public class frmClientes extends javax.swing.JFrame {
     
     public void pasarDatoACampoModificar() {
         cliente.pasarDatosACampoTextoEIniciarControladorModificar();
+    }
+    
+    public void pasarDatosACampoEliminar(){
+        cliente.pasarDatosACampoTextoEIniciarClienteControladorEliminar();
     }
     
     @SuppressWarnings("unchecked")

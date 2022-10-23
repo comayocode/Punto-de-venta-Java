@@ -32,7 +32,7 @@ public class ClienteControladorAgregar implements ActionListener{
     public void actionPerformed(ActionEvent evn){
         
         if (evn.getSource() == vista.btnGuardar) {
-            vo.setCedula(vista.txtDocumento.getText());
+            vo.setCedula(vista.txtCedula.getText());
             vo.setNombre(vista.txtCliente.getText());
             vo.setCelular(vista.txtCelular.getText());
             vo.setDireccion(vista.txtDireccion.getText());
@@ -60,16 +60,16 @@ public class ClienteControladorAgregar implements ActionListener{
     }
     
     public void limpiar(){
-        vista.txtDocumento.setText(null);
+        vista.txtCedula.setText(null);
         vista.txtCliente.setText(null);
         vista.txtCelular.setText(null);
         vista.txtDireccion.setText(null);
     }
     
     public void llenarCampos() {
-        if (vista.txtDocumento.getText().isEmpty()) {
-            vista.txtDocumento.setText("Código");
-            vista.txtDocumento.setForeground(new Color(0x666666));
+        if (vista.txtCedula.getText().isEmpty()) {
+            vista.txtCedula.setText("Cédula");
+            vista.txtCedula.setForeground(new Color(0x666666));
         }
 
         if (vista.txtCliente.getText().isEmpty()) {

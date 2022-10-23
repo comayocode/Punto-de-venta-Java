@@ -469,7 +469,7 @@ public class frmClientesModificar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JPanel body;
-    private javax.swing.JButton btnModificar;
+    public javax.swing.JButton btnModificar;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jpExit;
@@ -480,9 +480,9 @@ public class frmClientesModificar extends javax.swing.JFrame {
     private javax.swing.JPanel separado3;
     private javax.swing.JPanel separador;
     private javax.swing.JPanel topMenu;
-    private javax.swing.JTextField txtCelular;
-    private javax.swing.JTextField txtCliente;
-    private javax.swing.JTextField txtDireccion;
-    private javax.swing.JTextField txtDocumento;
+    public javax.swing.JTextField txtCelular;
+    public javax.swing.JTextField txtCliente;
+    public javax.swing.JTextField txtDireccion;
+    public javax.swing.JTextField txtDocumento;
     // End of variables declaration//GEN-END:variables
 }
