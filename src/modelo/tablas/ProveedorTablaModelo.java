@@ -2,6 +2,7 @@ package modelo.tablas;
 
 import Vista.frmProveedoresEliminar;
 import controlador.ProveedorControlador;
+import controlador.ProveedorControladorAgregar;
 import controlador.ProveedorControladorEliminar;
 import controlador.ProveedorControladorModificar;
 import java.awt.Color;
@@ -59,7 +60,7 @@ public class ProveedorTablaModelo {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(ProveedorControlador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProveedorControladorAgregar.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
             
