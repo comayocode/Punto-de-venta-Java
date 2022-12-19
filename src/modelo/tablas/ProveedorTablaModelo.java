@@ -6,6 +6,8 @@ import controlador.ProveedorControladorAgregar;
 import controlador.ProveedorControladorEliminar;
 import controlador.ProveedorControladorModificar;
 import java.awt.Color;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,16 +15,23 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import modelo.dao.Conexion;
 import modelo.dao.ProveedorDAO;
 import modelo.vo.ProveedorVO;
 import utilidades.jtable.pintar_tablas.pintarProveedores;
 import static vista.frmProveedores.tbListaProveedores;
 import vista.frmProveedoresModificar;
+import static vista.frmProveedores.txtBuscar;
 
 public class ProveedorTablaModelo {
 
+    DefaultTableModel modelo = new DefaultTableModel();
+    //Clasificar filas de latabla
+    TableRowSorter trs;
+    
     // ----- MOSTRAR LOS DATOS EN LA TABLA (FUNCIONA A LA PERFECCIÓN)-----
     public void mostrarRegistros() {
         Conexion con = new Conexion();
@@ -32,8 +41,6 @@ public class ProveedorTablaModelo {
         Statement st;
 
         String consulta = "SELECT * FROM proveedor";
-
-        DefaultTableModel modelo = new DefaultTableModel();
 
         modelo.addColumn("Nit/Código");
         modelo.addColumn("Nombre");
@@ -106,5 +113,17 @@ public class ProveedorTablaModelo {
         VistaEli.txtProveedor.setForeground(new Color(0x100F0F));
         
         VistaEli.setVisible(true);
+    }
+    
+    public void buscarProeedor(){
+        txtBuscar.addKeyListener (new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                trs.setRowFilter(RowFilter.regexFilter("(?i)" + txtBuscar.getText(), 1)); //"(?I)" no toma encuenta las mayúsculas o minúsculas al buscar
+            }
+        });
+        
+        trs = new TableRowSorter(modelo);
+        tbListaProveedores.setRowSorter(trs);
     }
 }

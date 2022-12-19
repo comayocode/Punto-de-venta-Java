@@ -394,7 +394,6 @@ public class frmProveedores extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tbListaProveedores);
-        tbListaProveedores.getAccessibleContext().setAccessibleParent(null);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 165, 716, 281));
 
@@ -412,6 +411,11 @@ public class frmProveedores extends javax.swing.JFrame {
         txtBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtBuscarMousePressed(evt);
+            }
+        });
+        txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBuscarKeyTyped(evt);
             }
         });
         jPanel2.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 124, 170, -1));
@@ -632,6 +636,10 @@ public class frmProveedores extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tbListaProveedoresMouseEntered
 
+    private void txtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyTyped
+        proveedor.buscarProeedor();
+    }//GEN-LAST:event_txtBuscarKeyTyped
+
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -689,6 +697,6 @@ public class frmProveedores extends javax.swing.JFrame {
     private javax.swing.JPanel lineaBuscar;
     private javax.swing.JPopupMenu menuTabla;
     public static javax.swing.JTable tbListaProveedores;
-    public javax.swing.JTextField txtBuscar;
+    public static javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }

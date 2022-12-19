@@ -1,7 +1,6 @@
 package vista;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JMenuItem;
@@ -9,10 +8,10 @@ import javax.swing.JOptionPane;
 import utilidades.jtable.pintar_tablas.pintarClientes;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import modelo.tablas.ClienteTablaModelo;
 import modelo.vo.ClienteVO;
 import modelo.dao.ClienteDAO;
 import controlador.ClienteControladorAgregar;
+import modelo.tablas.ClienteTablaModelo;
 
 public class frmClientes extends javax.swing.JFrame {
 
@@ -394,6 +393,11 @@ public class frmClientes extends javax.swing.JFrame {
                 txtBuscarMousePressed(evt);
             }
         });
+        txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBuscarKeyTyped(evt);
+            }
+        });
         body.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(458, 124, 170, -1));
 
         lineaBuscar.setBackground(new java.awt.Color(16, 15, 15));
@@ -602,6 +606,11 @@ public class frmClientes extends javax.swing.JFrame {
         llenarCampoVacio();
     }//GEN-LAST:event_formMousePressed
 
+    //Evento buscar en tiempo real
+    private void txtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyTyped
+        cliente.buscarCliente();
+    }//GEN-LAST:event_txtBuscarKeyTyped
+
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -660,6 +669,6 @@ public class frmClientes extends javax.swing.JFrame {
     private javax.swing.JPanel lineaBuscar;
     public static javax.swing.JPopupMenu menuTabla;
     public static javax.swing.JTable tbListaClientes;
-    private javax.swing.JTextField txtBuscar;
+    public static javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }

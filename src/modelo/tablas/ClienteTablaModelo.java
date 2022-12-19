@@ -21,9 +21,18 @@ import utilidades.jtable.pintar_tablas.pintarClientes;
 import static vista.frmClientes.tbListaClientes;
 import Vista.frmClientesEliminar;
 import controlador.ClienteControladorModificar;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import javax.swing.RowFilter;
+import javax.swing.table.TableRowSorter;
+import static vista.frmClientes.tbListaClientes;
+import static vista.frmClientes.txtBuscar;
 import vista.frmClientesModificar;
 
 public class ClienteTablaModelo {
+    DefaultTableModel modelo = new DefaultTableModel();
+    //Clasificar filas de latabla
+    TableRowSorter trs;
     
     // ----- MOSTRAR LOS DATOS EN LA TABLA (FUNCIONA A LA PERFECCIÓN)-----
     public void mostrarRegistros() {
@@ -35,7 +44,7 @@ public class ClienteTablaModelo {
 
         String consulta = "SELECT * FROM cliente";
 
-        DefaultTableModel modelo = new DefaultTableModel();
+        
 
         modelo.addColumn("Cedula");
         modelo.addColumn("Nombres");
@@ -110,4 +119,15 @@ public class ClienteTablaModelo {
         VistaEli.setVisible(true);
     }
     
+    public void buscarCliente(){
+        txtBuscar.addKeyListener (new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                trs.setRowFilter(RowFilter.regexFilter("(?i)" + txtBuscar.getText(), 1)); //"(?I)" no toma encuenta las mayúsculas o minúsculas al buscar
+            }
+        });
+        
+        trs = new TableRowSorter(modelo);
+        tbListaClientes.setRowSorter(trs);
+    }
 }
