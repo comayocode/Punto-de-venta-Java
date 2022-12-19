@@ -8,10 +8,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import utilidades.jtable.pintar_tablas.pintarComprasAgregar;
+import static utilidades.jtextfield.generarFechaActual.fechaActual;
 
 public class frmComprasAgregar extends javax.swing.JFrame {
 
     int xMouse, yMouse;
+    
 
     public frmComprasAgregar() {
         initComponents();
@@ -19,7 +21,7 @@ public class frmComprasAgregar extends javax.swing.JFrame {
         pintarComprasAgregar.pintar();
         pintarComprasAgregar.editarHeaderJtable();
         inicarpopUpMenuTabla();
-
+        mostrarFecha();
     }
 
     // ----- INICIO CÓDIGO POPUPMENU JTABLE -----
@@ -79,6 +81,11 @@ public class frmComprasAgregar extends javax.swing.JFrame {
     }
     // ----- FIN CÓDIGO POPUPMENU JTABLE -----
 
+    // ----- GENERAR FECHA STRIG -----
+    public void mostrarFecha(){
+        txtFechaGenerada.setText(fechaActual());
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -303,7 +310,6 @@ public class frmComprasAgregar extends javax.swing.JFrame {
         txtFechaGenerada.setFont(new java.awt.Font("Roboto Medium", 0, 13)); // NOI18N
         txtFechaGenerada.setForeground(new java.awt.Color(241, 241, 241));
         txtFechaGenerada.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtFechaGenerada.setText("16/08/2022");
         txtFechaGenerada.setBorder(null);
         header.add(txtFechaGenerada, new org.netbeans.lib.awtextra.AbsoluteConstraints(541, 23, 110, 25));
 
@@ -944,8 +950,8 @@ public class frmComprasAgregar extends javax.swing.JFrame {
     private javax.swing.JTextField txtCantidad;
     private javax.swing.JTextField txtCodigoGenerado;
     private javax.swing.JTextField txtCodigoProducto;
-    private javax.swing.JTextField txtFechaGenerada;
-    private javax.swing.JTextField txtNitProveedor;
+    public static javax.swing.JTextField txtFechaGenerada;
+    public static javax.swing.JTextField txtNitProveedor;
     private javax.swing.JTextField txtPrecioCompra;
     private javax.swing.JTextField txtPrecioVenta;
     private javax.swing.JTextField txtProducto;
