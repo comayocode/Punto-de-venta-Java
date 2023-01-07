@@ -8,7 +8,7 @@ public class generarFechaActual {
     
     public static String fechaActual(){
         Date fecha = new Date();
-        SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/YYYY");
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("YYYY/MM/dd");
         
         return formatoFecha.format(fecha);
     }
