@@ -81,7 +81,7 @@ public class frmComprasAgregar extends javax.swing.JFrame {
     }
     // ----- FIN CÓDIGO POPUPMENU JTABLE -----
 
-    // ----- GENERAR FECHA STRIG -----
+    // ----- GENERAR FECHA STRING -----
     public void mostrarFecha(){
         txtFechaGenerada.setText(fechaActual());
     }
@@ -122,9 +122,6 @@ public class frmComprasAgregar extends javax.swing.JFrame {
         txtCantidad = new javax.swing.JTextField();
         separador2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        txtPrecioVenta = new javax.swing.JTextField();
-        separador3 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
         txtProveedor = new javax.swing.JTextField();
         separador4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -468,33 +465,6 @@ public class frmComprasAgregar extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(16, 15, 15));
         jLabel4.setText("Cantidad:");
         jpAgregarCompra.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 91, -1, -1));
-
-        txtPrecioVenta.setBackground(new java.awt.Color(217, 217, 217));
-        txtPrecioVenta.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
-        txtPrecioVenta.setBorder(null);
-        txtPrecioVenta.setOpaque(true);
-        jpAgregarCompra.add(txtPrecioVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 125, 111, 25));
-
-        separador3.setBackground(new java.awt.Color(16, 15, 15));
-
-        javax.swing.GroupLayout separador3Layout = new javax.swing.GroupLayout(separador3);
-        separador3.setLayout(separador3Layout);
-        separador3Layout.setHorizontalGroup(
-            separador3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 111, Short.MAX_VALUE)
-        );
-        separador3Layout.setVerticalGroup(
-            separador3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2, Short.MAX_VALUE)
-        );
-
-        jpAgregarCompra.add(separador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 150, 111, 2));
-
-        jLabel5.setBackground(new java.awt.Color(16, 15, 15));
-        jLabel5.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(16, 15, 15));
-        jLabel5.setText("Precio Venta:");
-        jpAgregarCompra.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 126, -1, -1));
 
         txtProveedor.setBackground(new java.awt.Color(217, 217, 217));
         txtProveedor.setFont(new java.awt.Font("Roboto Medium", 0, 15)); // NOI18N
@@ -917,7 +887,6 @@ public class frmComprasAgregar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -942,7 +911,6 @@ public class frmComprasAgregar extends javax.swing.JFrame {
     private javax.swing.JPanel separador;
     private javax.swing.JPanel separador1;
     private javax.swing.JPanel separador2;
-    private javax.swing.JPanel separador3;
     private javax.swing.JPanel separador4;
     private javax.swing.JPanel separador5;
     private javax.swing.JPanel separador6;
@@ -953,7 +921,6 @@ public class frmComprasAgregar extends javax.swing.JFrame {
     public static javax.swing.JTextField txtFechaGenerada;
     public static javax.swing.JTextField txtNitProveedor;
     private javax.swing.JTextField txtPrecioCompra;
-    private javax.swing.JTextField txtPrecioVenta;
     private javax.swing.JTextField txtProducto;
     private javax.swing.JTextField txtProveedor;
     // End of variables declaration//GEN-END:variables
