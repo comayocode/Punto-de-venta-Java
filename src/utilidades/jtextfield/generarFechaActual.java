@@ -2,7 +2,6 @@ package utilidades.jtextfield;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import static vista.frmComprasAgregar.txtFechaGenerada;
 
 public class generarFechaActual {
     
